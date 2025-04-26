@@ -13,6 +13,7 @@ const passport = require('passport');
 const User = require('./models/User');
 const {IsLoggedIn} = require("./middlewares/isLoggedIn");
 const LocalStrategy = require('passport-local').Strategy;
+const {getGraphData,getDeathsData} = require('./utils/fetchGraph'); // correct path
 
 
 dotenv.config();
@@ -25,10 +26,11 @@ const port = process.env.PORT || 8080;
 
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../frontend/views'));
 
 // Serve static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "../frontend/public")));
+app.use(express.static('public'));
 
 //Handling Post Request
 app.use(express.urlencoded({ extended: true })); 
@@ -66,8 +68,8 @@ db.then(()=>{
     console.log(err);
 })
 app.get("/", async (req, res) => {
-    res.send("hi");
-  });
+    res.render("home");
+});
 
   // Run once at startup
   fetchAndStoreGdacsData();
@@ -76,6 +78,8 @@ app.get("/", async (req, res) => {
     console.log('Fetching and storing GDACS data...');
     await fetchAndStoreGdacsData();
   });
+  app.get("/api/graph-data",getGraphData,);
+app.get('/api/deaths-data',getDeathsData)
 //Running server
 app.listen(port,()=>{
     console.log(`Server is listening on port ${port}`);

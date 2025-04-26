@@ -1,101 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GDACS Alerts</title>
-  <style>
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-
-    .scroll-container {
-      max-width: 900px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      height: 600px;
-      overflow-y: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .alert {
-      margin-bottom: 20px;
-      padding: 15px;
-      border-left: 5px solid #f44336;
-      background: #fff8f8;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-      border-radius: 5px;
-    }
-
-    .alert h3 {
-      margin: 0;
-      color: #f44336;
-    }
-
-    .alert p {
-      margin: 8px 0;
-      color: #444;
-    }
-
-    .alert small {
-      color: #777;
-    }
-
-    .filter-form {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      background: #eef1f5;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    .filter-form label,
-    .filter-form select,
-    .filter-form input {
-      display: block;
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      font-size: 16px;
-    }
-
-    .filter-form button {
-      background: #f44336;
-      color: #fff;
-      padding: 12px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    .filter-form button:hover {
-      background: #d32f2f;
-    }
-
-    body {
-      font-family: sans-serif;
-      background: #f7f7f7;
-    }
-
-    a {
-      color: #f44336;
-      text-decoration: none;
-    }
-
-    a:hover {       
-      text-decoration: underline;
-    }
-    #unsubscribeButton{
-      background-color: rgb(10, 230, 46);
-    }
-  </style>
+  <title>Disaster Relief</title>
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/disasterAlert.css">
+  
 </head>
 <body>
-  <%- include('./partials/navbar') %>  <!-- Include the navbar partial -->
+  <%- include('../partials/navbar') %>
+  <br><br><br> <!-- Include the navbar partial -->
   <h1>Real-Time Disaster Alerts</h1>
   <!-- 🔥 Real-Time Alerts -->
   <div class="scroll-container">
@@ -114,9 +27,9 @@
       </div>
     <% }) %>
   </div>
-  <!-- 🌍 Filter + Email Form -->
+<br>
+<h2 style="text-align: center;">Subscribe to get alerts in your Email for latest updates</h2>
   <% if (!user || !user.subscribedCountries || user.subscribedCountries.length === 0) { %>
-    <!-- 🌍 Filter + Email Form -->
     <form class="filter-form" id="subscribeForm" method="POST" action="/api/disasters/subscribe">
       <label for="country">Select Country:</label>
       <select name="country" id="country" required>
@@ -128,7 +41,110 @@
         <option value="Germany">Germany</option>
         <option value="Indonesia">Indonesia</option>
         <option value="Russian">Russian</option>
-        <!-- Add more countries as needed -->
+          <option value="Afghanistan">Afghanistan</option>
+          <option value="Albania">Albania</option>
+          <option value="Algeria">Algeria</option>
+          <option value="Andorra">Andorra</option>
+          <option value="Angola">Angola</option>
+          <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Armenia">Armenia</option>
+          <option value="Australia">Australia</option>
+          <option value="Austria">Austria</option>
+          <option value="Azerbaijan">Azerbaijan</option>
+          <option value="Bahamas">Bahamas</option>
+          <option value="Bahrain">Bahrain</option>
+          <option value="Bangladesh">Bangladesh</option>
+          <option value="Barbados">Barbados</option>
+          <option value="Belarus">Belarus</option>
+          <option value="Belgium">Belgium</option>
+          <option value="Belize">Belize</option>
+          <option value="Benin">Benin</option>
+          <option value="Bhutan">Bhutan</option>
+          <option value="Bolivia">Bolivia</option>
+          <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+          <option value="Botswana">Botswana</option>
+          <option value="Brazil">Brazil</option>
+          <option value="Brunei">Brunei</option>
+          <option value="Bulgaria">Bulgaria</option>
+          <option value="Burkina Faso">Burkina Faso</option>
+          <option value="Burundi">Burundi</option>
+          <option value="Cabo Verde">Cabo Verde</option>
+          <option value="Cambodia">Cambodia</option>
+          <option value="Cameroon">Cameroon</option>
+          <option value="Canada">Canada</option>
+          <option value="Central African Republic">Central African Republic</option>
+          <option value="Chad">Chad</option>
+          <option value="Chile">Chile</option>
+          <option value="China">China</option>
+          <option value="Colombia">Colombia</option>
+          <option value="Comoros">Comoros</option>
+          <option value="Congo, Democratic Republic of the">Congo, Democratic Republic of the</option>
+          <option value="Congo, Republic of the">Congo, Republic of the</option>
+          <option value="Costa Rica">Costa Rica</option>
+          <option value="Croatia">Croatia</option>
+          <option value="Cuba">Cuba</option>
+          <option value="Cyprus">Cyprus</option>
+          <option value="Czech Republic">Czech Republic</option>
+          <option value="Denmark">Denmark</option>
+          <option value="Djibouti">Djibouti</option>
+          <option value="Dominica">Dominica</option>
+          <option value="Dominican Republic">Dominican Republic</option>
+          <option value="East Timor">East Timor</option>
+          <option value="Ecuador">Ecuador</option>
+          <option value="Egypt">Egypt</option>
+          <option value="El Salvador">El Salvador</option>
+          <option value="Equatorial Guinea">Equatorial Guinea</option>
+          <option value="Eritrea">Eritrea</option>
+          <option value="Estonia">Estonia</option>
+          <option value="Eswatini">Eswatini</option>
+          <option value="Ethiopia">Ethiopia</option>
+          <option value="Fiji">Fiji</option>
+          <option value="Finland">Finland</option>
+          <option value="France">France</option>
+          <option value="Gabon">Gabon</option>
+          <option value="Gambia">Gambia</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Germany">Germany</option>
+          <option value="Ghana">Ghana</option>
+          <option value="Greece">Greece</option>
+          <option value="Grenada">Grenada</option>
+          <option value="Guatemala">Guatemala</option>
+          <option value="Guinea">Guinea</option>
+          <option value="Guinea-Bissau">Guinea-Bissau</option>
+          <option value="Guyana">Guyana</option>
+          <option value="Haiti">Haiti</option>
+          <option value="Honduras">Honduras</option>
+          <option value="Hungary">Hungary</option>
+          <option value="Iceland">Iceland</option>
+          <option value="India">India</option>
+          <option value="Indonesia">Indonesia</option>
+          <option value="Iran">Iran</option>
+          <option value="Iraq">Iraq</option>
+          <option value="Ireland">Ireland</option>
+          <option value="Israel">Israel</option>
+          <option value="Italy">Italy</option>
+          <option value="Jamaica">Jamaica</option>
+          <option value="Japan">Japan</option>
+          <option value="Jordan">Jordan</option>
+          <option value="Kazakhstan">Kazakhstan</option>
+          <option value="Kenya">Kenya</option>
+          <option value="Kiribati">Kiribati</option>
+          <option value="Korea, North">Korea, North</option>
+          <option value="Korea, South">Korea, South</option>
+          <option value="Kosovo">Kosovo</option>
+          <option value="Kuwait">Kuwait</option>
+          <option value="Kyrgyzstan">Kyrgyzstan</option>
+          <option value="Laos">Laos</option>
+          <option value="Latvia">Latvia</option>
+          <option value="Lebanon">Lebanon</option>
+          <option value="Lesotho">Lesotho</option>
+          <option value="Liberia">Liberia</option>
+          <option value="Libya">Libya</option>
+          <option value="Liechtenstein">Liechtenstein</option>
+          <option value="Lithuania">Lithuania</option>
+          
+
       </select>
   
       <button type="submit" id="subscribeButton">Subscribe to Alerts</button>
@@ -136,7 +152,7 @@
   <% } %>
   <% if (user && user.subscribedCountries && user.subscribedCountries.length > 0) { %>
     <form class="filter-form" id="unsubscribeForm" method="POST" action="/api/disasters/unsubscribe">
-      <label for="unsubscribeCountry">Unsubscribe from Country:</label>
+      <label for="unsubscribeCountry">Unsubscribe from Country's alerts:</label>
       <select name="country" id="unsubscribeCountry" required>
         <% user.subscribedCountries.forEach(country => { %>
           <option value="<%= country %>"><%= country %></option>

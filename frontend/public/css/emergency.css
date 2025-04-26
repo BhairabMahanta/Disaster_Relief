@@ -1,0 +1,234 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f2f2f2;
+    color: #333;
+  }
+  
+  /* Emergency Wrapper */
+  #emergency-wrapper {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+  }
+  
+  #emergency-btn {
+    background-color: #e50914;
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  #emergency-btn:hover {
+    background-color: #d40810;
+  }
+  
+  /* Menu Styles */
+  #menu {
+    display: none;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    width: 200px;
+    text-align: left;
+    display: none;
+  }
+  
+  #menu.active {
+    display: block;
+  }
+  
+  #menu button {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 16px;
+    padding: 10px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  #menu button:hover {
+    background-color: #f4f4f4;
+  }
+  
+  /* Contact Selection Modal */
+  #contact-selection {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    z-index: 1001;
+  }
+  
+  #contact-selection h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  #contact-selection ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #contact-selection ul li {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  .select-option {
+    color: #1d72b8;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  
+  .remove-number {
+    color: #e50914;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 18px;
+  }
+  
+  #close-contact-selection {
+    background-color: #e50914;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  #close-contact-selection:hover {
+    background-color: #d40810;
+  }
+  
+  /* Add Emergency Number Modal */
+  #add-number-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    z-index: 1001;
+  }
+  
+  #add-number-modal h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  #add-number-modal input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  #add-number-modal button {
+    background-color: #1d72b8;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #add-number-modal button:hover {
+    background-color: #155a8a;
+  }
+  
+  #close-add-modal {
+    background-color: #e50914;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+  }
+  
+  #close-add-modal:hover {
+    background-color: #d40810;
+  }
+  
+  /* Custom Alerts */
+  .alert {
+    background-color: #e50914;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .alert.success {
+    background-color: #4caf50;
+  }
+  
+  .alert.error {
+    background-color: #f44336;
+  }
+  
+  .alert.info {
+    background-color: #2196f3;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    #menu {
+      width: 100%;
+      bottom: 0;
+      right: 0;
+    }
+  
+    #contact-selection,
+    #add-number-modal {
+      width: 80%;
+    }
+  }
+  

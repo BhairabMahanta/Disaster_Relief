@@ -1,0 +1,103 @@
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #111;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Container */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1020px;
+}
+
+/* Navbar Links */
+.nav-item {
+    position: relative;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect - Neon Glow */
+.nav-item:hover {
+    color: goldenrod;
+    text-shadow: 0 0 10px goldenrod, 0 0 20px goldenrod;
+}
+
+/* Animated Underline Effect */
+.nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background:goldenrod;
+    transition: 0.4s ease-in-out;
+    transform: translateX(-50%);
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+/* Mobile-Friendly Navbar */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-item {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack on small screens */
+        align-items: center;
+    }
+    
+    .card {
+        width: 90%; /* Takes full width on mobile */
+        max-width: 400px;
+    }
+}
+
+/* Responsive Fix: Stack on small screens */
+@media (max-width: 1024px) {
+    .card {
+        width: calc(50% - 25px); /* 2 per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Full width on mobile */
+        max-width: 400px;
+    }
+}
+
+.mainbody{
+    width: 100vw;
+}

@@ -1,0 +1,83 @@
+    <!-- FAQs Section -->
+    <section class="faqs bg-white py-12 px-6" id="faqs">
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">Frequently Asked Questions</h2>
+
+            <div class="space-y-6">
+
+                <!-- Question 1 -->
+                <div class="faq-item border-b pb-4">
+                    <h3 class="text-xl font-semibold text-gray-700 cursor-pointer flex justify-between items-center">
+                        What services do you offer for public health?
+                        <span class="toggle-icon text-2xl">+</span>
+                    </h3>
+                    <p class="faq-answer hidden text-gray-600 mt-2">
+                        We provide AI-driven mental health tools like **EmoBuddy (AI Chatbot)**, **TheraTalk (Therapist Support)**, and **MindWave (Sound Therapy)** to improve well-being.
+                    </p>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="faq-item border-b pb-4">
+                    <h3 class="text-xl font-semibold text-gray-700 cursor-pointer flex justify-between items-center">
+                        How can I get involved in disaster relief efforts?
+                        <span class="toggle-icon text-2xl">+</span>
+                    </h3>
+                    <p class="faq-answer hidden text-gray-600 mt-2">
+                        You can volunteer through our **NGO & Volunteer Platform**, stay updated with our **Disaster Alert App**, or donate to provide immediate assistance.
+                    </p>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="faq-item border-b pb-4">
+                    <h3 class="text-xl font-semibold text-gray-700 cursor-pointer flex justify-between items-center">
+                        What education resources do you provide?
+                        <span class="toggle-icon text-2xl">+</span>
+                    </h3>
+                    <p class="faq-answer hidden text-gray-600 mt-2">
+                        We offer **EduVerse (Online Study Platform)** and **EduBuddy (AI Study Chatbot)** to support students and lifelong learners.
+                    </p>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="faq-item border-b pb-4">
+                    <h3 class="text-xl font-semibold text-gray-700 cursor-pointer flex justify-between items-center">
+                        Is your mental health support free?
+                        <span class="toggle-icon text-2xl">+</span>
+                    </h3>
+                    <p class="faq-answer hidden text-gray-600 mt-2">
+                        Yes! Our AI-powered **EmoBuddy Chatbot** and other tools are **completely free**, while **TheraTalk** offers both free and premium therapist sessions.
+                    </p>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="faq-item border-b pb-4">
+                    <h3 class="text-xl font-semibold text-gray-700 cursor-pointer flex justify-between items-center">
+                        How can I contact you for more information?
+                        <span class="toggle-icon text-2xl">+</span>
+                    </h3>
+                    <p class="faq-answer hidden text-gray-600 mt-2">
+                        You can reach us via our **Contact Page** or email us at **support@helpingcommunities.org** for any inquiries.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Js for FAQ Toggle -->
+    <script>
+        document.querySelectorAll(".faq-item").forEach((item) => {
+            item.addEventListener("click", () => {
+                const answer = item.querySelector(".faq-answer");
+                const icon = item.querySelector(".toggle-icon");
+                
+                if (answer.classList.contains("hidden")) {
+                    answer.classList.remove("hidden");
+                    icon.textContent = "−";
+                } else {
+                    answer.classList.add("hidden");
+                    icon.textContent = "+";
+                }
+            });
+        });
+    </script>

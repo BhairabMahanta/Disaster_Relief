@@ -1,0 +1,18 @@
+<!-- views/partials/navbar.ejs -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="nav-item">Home</a>
+        <a href="/api/disasters" class="nav-item">Alerts</a>
+    </div>
+    <div class="nav-auth">
+        <% if (user) { %>
+            <div class="user-info">
+                <a href="http://localhost:8080/auth/logout" class="nav-item">Logout</a>
+                <span class="nav-item ml-20 bg-gray-700 px-3 py-1 rounded-lg border border-yellow-400 text-yellow-400 font-bold"><%= user.name %></span>
+            </div>
+        <% } else { %>
+            <a href="http://localhost:8080/auth/login?" class="nav-item">Login</a>
+            <a href="http://localhost:8080/auth/register" class="nav-item">Signup</a>
+        <% } %>
+    </div>
+</nav>
