@@ -1,0 +1,39 @@
+
+    <div class="table-container">
+        <table id="disastersTable">
+            <thead>
+              <tr>
+                <th>Location</th>
+                <th>Number of Disasters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Table rows will be added dynamically -->
+            </tbody>
+          </table>
+          
+    </div>
+
+      <script>
+      // Fetch the disaster counts from the backend
+      fetch('/api/disasters/count-per-location')
+        .then(response => response.json())
+        .then(data => {
+          // Get the table body
+          const tableBody = document.querySelector('#disastersTable tbody');
+          
+          // Loop through the data and create table rows
+          data.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${item._id}</td>
+              <td>${item.count}</td>
+            `;
+            tableBody.appendChild(row);
+          });
+        })
+        .catch(error => console.error('Error fetching disaster data:', error));
+      </script>
+
+
+  

@@ -8,15 +8,20 @@
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/emergency.css">
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/stats.css">
+    <link rel="stylesheet" href="/css/disaster_map.css">
+    <link rel="stylesheet" href="/css/disasterAlert2.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <style>
-    canvas {
-        max-height: 600px;
-      max-width: 500px;
-      margin-left: 17rem;
-    }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+      canvas {
+          max-height: 600px;
+        max-width: 500px;
+        margin-left: 17rem;
+      }
+      </style>
 </head>
 <body class="bg-grey-100" id="chamchamcham">
     
@@ -24,8 +29,12 @@
 <br><br>
   <%-include('../partials/emergency')%>
   <%- include('../partials/header')%>
-  <%- include('../partials/services')%>
   <%- include('../partials/graphs')%>
+  <%- include('../partials/stats')%>
+  <%- include('../partials/disaster_map')%>
+  <br>
+  <hr>
+  <%- include('../partials/services')%>
   <%- include('../partials/FAQ')%>
   <%- include('../partials/contactUs') %>
   <%- include('../partials/aboutUs') %>

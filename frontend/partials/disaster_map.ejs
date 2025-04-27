@@ -1,0 +1,92 @@
+<div class="mainContent">
+    <div id="map"></div>
+
+    <div class="legend">
+        <div><span class="earthquake"></span> Earthquake</div>
+        <div><span class="tsunami"></span> Tsunami</div>
+        <div><span class="flood"></span> Flood</div>
+        <div><span class="volcano"></span> Volcano</div>
+        <div><span class="wildfire"></span> Wildfire</div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([20.5937, 78.9629], 3);  // Center map on India
+
+        // Set up the tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // List of countries and their approximate coordinates
+        const countryCoordinates = {
+            "Nepal": [28.3949, 84.1240],
+            "Japan": [36.2048, 138.2529],
+            "USA": [37.0902, -95.7128],
+            "Indonesia": [-0.7893, 113.9213],
+            "Chile": [-35.6751, -71.5430],
+            "Philippines": [12.8797, 121.7740]
+            // Add more countries as needed...
+        };
+
+        // Define marker colors based on disaster type
+        const markerColors = {
+            "Earthquake": "red",
+            "Tsunami": "blue",
+            "Flood": "lightblue",
+            "Volcano": "brown",
+            "Wildfire": "orange"
+        };
+
+        // Function to add markers to the map based on the disaster data
+        function addMarkers(disasters) {
+            disasters.forEach(disaster => {
+                const location = disaster.location; // Location from the database (country name)
+                const disasterType = disaster.title.split(' ')[0]; // Extract disaster type (e.g., Earthquake)
+                const coordinates = countryCoordinates[location]; // Get coordinates for country name
+
+                if (coordinates) {
+                    const markerColor = markerColors[disasterType] || "green";  // Default to green if no disaster type match
+                    const marker = L.circleMarker(coordinates, {
+                        color: markerColor,
+                        radius: 10
+                    }).addTo(map);
+
+                    marker.bindPopup(`
+                        <b>${disaster.title}</b><br>
+                        <i>${disaster.summary}</i><br>
+                        <a href="${disaster.link}" target="_blank">Read more</a>
+                    `);
+                }
+            });
+        }
+
+        // Pass the data from backend (dynamically populated)
+        const disasters = <%- JSON.stringify(disasters) %>;
+
+        // Add the markers to the map based on the disasters data
+        addMarkers(disasters);
+    </script>
+  <br><br><br> <!-- Include the navbar partial -->
+  <!-- 🔥 Real-Time Alerts -->
+<div class="scroll-container">
+    <% disasters.forEach(disaster => { %>
+      <div class="alert">
+        <h3><a href="<%= disaster.link %>"><%= disaster.title %></a></h3>
+        <p><%= disaster.summary %></p>
+        <p>
+          <small>
+            Location: <%= disaster.location && disaster.location? disaster.location : 'Unknown' %> |
+            Date: <%= disaster.eventDate ? disaster.eventDate.toUTCString() : 'Unknown' %>
+          </small>
+          
+          
+        </p>
+      </div>
+    <% }) %>
+  </div>
+</div>
+ 

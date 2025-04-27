@@ -1,0 +1,74 @@
+.table-container {
+    width: 80%;
+    margin: 30px auto;
+    max-height: 400px; /* Adjust the height as needed */
+    overflow-y: auto;  /* Enables vertical scrolling when content exceeds max height */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  /* Table Styles */
+  #disastersTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+  }
+  
+  #disastersTable th,
+  #disastersTable td {
+    padding: 12px 20px;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  #disastersTable th {
+    background-color: #4CAF50; /* Green for the header */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  #disastersTable td {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #disastersTable tr:nth-child(even) td {
+    background-color: #f2f2f2; /* Zebra striping */
+  }
+  
+  #disastersTable tr:hover td {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  #disastersTable td {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Border and rounded corners for table */
+  #disastersTable {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Adding a border to the entire table */
+  #disastersTable th,
+  #disastersTable td {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .table-container {
+      width: 100%;
+    }
+  
+    #disastersTable th,
+    #disastersTable td {
+      padding: 8px 12px;
+    }
+  }
