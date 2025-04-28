@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Aid</title>
+    <link rel="stylesheet" href="/css/ngo.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <%-include('../partials/loader')%>
+    <%- include('../partials/navbar') %>
+<br><br>
+
+    <!-- Hero Section -->
+    <section class="hero" style="margin-top: 7rem;">
+        <h1>Emergency Assistance Platform</h1>
+        <p>Connecting volunteers, NGOs, and people in need. Together, we save lives.</p>
+    </section>
+    <!-- Cards Section -->
+    <section class="content">
+        <a href="/citizen/requestHelp">
+            <div class="card">🛏️ Request NGO Help</div>
+        </a>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="join-us">
+        <h2>Join Us on this adventure</h2>
+        <button id="join-us-btn">🚀Apply for NGO-A world saving team</button>
+    </section>
+    <!-- Donation Section -->
+    <section class="donation">
+        <h2>Make a Difference</h2>
+        <p>Your donation can save lives. Every contribution counts.</p>
+        <button class="donate-btn">💰 Donate Now</button>
+    </section>
+
+    <!-- Modal for NGO/Volunteer Selection -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>How would you like to join?</h3>
+            <div class="options">
+                <form action="/ngo/register" method="get">
+                    <button id="join-ngo-btn" style="margin-right: 1rem;">NGO Registration Form</button>
+                </form>
+                <form action="/ngo/login" method="get">
+                    <button id="join-volunteer-btn">Login as NGO</button>
+                </form>
+            </div>
+            <button class="close-btn">❌ Close</button>
+        </div>
+    </div>
+
+ 
+
+    <!-- Contact Section -->
+    <section class="contact p-6">
+        <h2 class="text-2xl font-semibold mb-4">Leave us your valuable feedback</h2>
+        <form id="contact-form" action="/ngo/feedback" method="POST" class="space-y-4">
+      
+          <div class="flex items-center space-x-2">
+            <label class="font-medium">Rate us:</label>
+            <select name="rating" required class="border rounded-lg p-2">
+              <option value="" disabled selected>Select rating</option>
+              <option value="5">⭐️⭐️⭐️⭐️⭐️ (Excellent)</option>
+              <option value="4">⭐️⭐️⭐️⭐️ (Good)</option>
+              <option value="3">⭐️⭐️⭐️ (Average)</option>
+              <option value="2">⭐️⭐️ (Poor)</option>
+              <option value="1">⭐️ (Very Poor)</option>
+            </select>
+          </div>
+      
+          <div>
+            <textarea name="message" placeholder="Your Message" required class="w-full p-2 border rounded-lg" rows="5"></textarea>
+          </div>
+      
+          <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg">
+            Send Feedback
+          </button>
+        </form>
+      </section>
+      
+    <footer class="full-width-footer">
+        <div class="footer-container">
+          <div class="footer-top">
+            <h2>MindCare</h2>
+            <p>Your safe space for mental wellness.</p>
+          </div>
+          <div class="footer-links-container">
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="social-icons">
+            <a href="#"><img src="/img/facebook.jpg" alt="Facebook"></a>
+            <a href="#"><img src="/img/twitter.jpg" alt="Twitter"></a>
+            <a href="#"><img src="/img/insta.jpg" alt="Instagram"></a>
+            <a href="#"><img src="/img/linkedin.jpg" alt="LinkedIn"></a>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 MindCare. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+  
+    <!-- Scripts -->
+    <script src="/js/ngo.js"></script>
+    <script>
+        // Check if the URL has 'feedback=success'
+        if (window.location.search.includes('feedback=success')) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Thank you!',
+            text: 'Your feedback has been received successfully.',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'OK'
+          }).then(() => {
+            // Remove query param from URL after user clicks OK
+            window.history.replaceState({}, document.title, "/ngo/dashboard");
+          });
+        }
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Aid</title>
+    <link rel="stylesheet" href="/css/guide.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/loader.css">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+<%-include('../partials/loader')%>
+<%- include('../partials/navbar') %>
+<br><br><br>  
+<h2 style="margin-top: 5.7rem;">View Resources Online</h2>
+<div id="online-resources">
+    <button class="online-resource-button" data-pdf="EmergencyKit.pdf">
+        <div class="book ">
+            <p>Click to read</p>
+            <div class="cover cover1">
+                <p>Emergency Kit Guide</p>
+            </div>
+        </div>
+    </button>
+    <button class="online-resource-button" data-pdf="firstAid.pdf">
+        <div class="book">
+            <p>Click to read</p>
+            <div class="cover cover2">
+                <p>First Aid Instructions</p>
+            </div>
+        </div>
+    </button>
+    <button class="online-resource-button" data-pdf="EP.pdf">
+        <div class="book">
+            <p>Click to read</p>
+            <div class="cover cover3">
+                <p>Emergency Preparedness Guide</p>
+            </div>
+        </div>
+    </button>
+    <button class="online-resource-button" data-pdf="HandBookDisasterManagement.pdf">
+        <div class="book">
+            <p>Click to read</p>
+            <div class="cover cover4">
+                <p>Disaster Preparedness Handbook</p>
+            </div>
+        </div>
+    </button>
+    <button class="online-resource-button" data-pdf="fweb.pdf">
+        <div class="book">
+            <p>Click to read</p>
+            <div class="cover cover5">
+                <p>Food & Water Storage Guide</p>
+            </div>
+        </div>
+    </button>
+    <button class="online-resource-button" data-pdf="power.pdf">
+        <div class="book">
+            <p>Click to read</p>
+            <div class="cover cover6">
+                <p>Power Outage Safety Tips</p>
+            </div>
+        </div>
+    </button>
+    <button class="online-resource-button" data-pdf="earthquakes.pdf">
+        <div class="book">
+            <p>Click to read</p>
+            <div class="cover cover7">
+                <p>Earthquake Safety Guide</p>
+            </div>
+        </div>
+    </button>
+    <button class="online-resource-button" data-pdf="earthp.pdf">
+        <div class="book">
+            <p>Click to read</p>
+            <div class="cover cover8">
+                <p>Earthquake Preparedness Checklist</p>
+            </div>
+        </div>
+    </button>
+    <button class="online-resource-button" data-pdf="abc.pdf">
+        <div class="book">
+            <p>Click to read</p>
+            <div class="cover cover9">
+                <p>Structural Safety for Earthquakes</p>
+            </div>
+        </div>
+    </button>
+</div>
+
+<!-- pdf Viewer -->
+<div id="pdf-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <embed id="pdf-viewer" type="application/pdf" width="100%" height="500">
+    </div>
+</div>
+
+<h2>Resource Downloads</h2>
+<ul>
+    <li><a href="/resources/EmergencyKit.pdf" download>Emergency Kit Guide</a></li>
+    <li><a href="/resources/firstAid.pdf" download>First Aid Instructions</a></li>
+    <li><a href="/resources/EP.pdf" download>Emergency Preparedness Guide</a></li>
+    <li><a href="/resources/HandBookDisasterManagement.pdf" download>Disaster Preparedness Handbook</a></li>
+    <li><a href="/resources/fweb.pdf" download>Food & Water Storage Guide</a></li>
+    <li><a href="/resources/power.pdf" download>Power Outage Safety Tips</a></li>
+    <li><a href="/resources/earthquakes.pdf" download>Earthquake Safety Guide</a></li>
+    <li><a href="/resources/earthp.pdf" download>Earthquake Preparedness Checklist</a></li>
+    <li><a href="/resources/abc.pdf" download>Structural Safety for Earthquakes</a></li>
+</ul>
+
+<h2>Emergency Contacts</h2>
+<div id="emergency-contacts">
+    <div class="contact-card">
+        <img src="/img/police.png" alt="Police Icon">
+        <div class="contact-info">
+            <h3>Police</h3>
+            <p>911</p>
+        </div>
+    </div>
+    <div class="contact-card">
+        <img src="/img/fire.png" alt="Fire Department Icon">
+        <div class="contact-info">
+            <h3>Fire Department</h3>
+            <p>101</p>
+        </div>
+    </div>
+    <div class="contact-card">
+        <img src="/img/medical.png" alt="Medical Emergency Icon">
+        <div class="contact-info">
+            <h3>Medical Emergency</h3>
+            <p>102</p>
+        </div>
+    </div>
+    <div class="contact-card">
+        <img src="/img/disaster.png" alt="Disaster Helpline Icon">
+        <div class="contact-info">
+            <h3>Disaster Helpline</h3>
+            <p>108</p>
+        </div>
+    </div>
+</div>
+
+<h2>Add Your Emergency Contacts</h2>
+<div id="add-contacts">
+    <form id="contact-form" action="/resources/addcontact" method="post">
+        <input type="text" id="contact-name" placeholder="Contact Name" name="name" required>
+        <input type="tel" id="contact-number" placeholder="Contact Number" name="number" required>
+        <button type="submit">Add Contact</button>
+    </form>
+
+    <% if (allContacts.length > 0) { %>
+        <h3>Your Saved Contacts</h3>
+        <% allContacts.forEach(contact => { %>
+            <div id="user-contacts">
+                <span>Name: <%= contact.name %></span>
+                <span>Number: <%= contact.number %></span>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <p>No contacts added yet.</p>
+    <% } %>
+</div>
+
+<footer class="full-width-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <h2>MindCare</h2>
+        <p>Your safe space for mental wellness.</p>
+      </div>
+      <div class="footer-links-container">
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="social-icons">
+        <a href="#"><img src="/img/facebook.jpg" alt="Facebook"></a>
+        <a href="#"><img src="/img/twitter.jpg" alt="Twitter"></a>
+        <a href="#"><img src="/img/insta.jpg" alt="Instagram"></a>
+        <a href="#"><img src="/img/linkedin.jpg" alt="LinkedIn"></a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MindCare. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+<script src="/js/guide.js"></script>
+<script src="/js/loader.js"></script>   
+</body>
+</html>

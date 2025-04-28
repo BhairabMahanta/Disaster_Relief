@@ -7,6 +7,11 @@ const disasterRoutes = require('./routes/disasterRoutes');
 const registerRoutes = require('./routes/registerRoutes');
 const homeRoutes = require('./routes/homeRoutes');
 const droneRoutes = require('./routes/droneRoutes');
+const ngoRoutes = require('./routes/ngoRoutes');
+const resourceRoutes = require('./routes/resourceRoutes');
+const chatBotRoutes = require('./routes/chatBotRoutes');
+const adminRoutes = require('./routes/adminRoutes');
+const citizenRoutes = require('./routes/citizenRoutes');
 const fetchAndStoreGdacsData = require('./utils/fetchGdacs');
 const Alert = require('./models/Disaster');
 const cron = require("node-cron");
@@ -20,6 +25,7 @@ const { IsLoggedIn } = require("./middlewares/isLoggedIn");
 const LocalStrategy = require('passport-local').Strategy;
 const { getGraphData, getDeathsData } = require('./utils/fetchGraph'); 
 const { sendDroneDispatchEmail, sendDroneCompletionEmail } = require('./utils/sendDroneEmail');
+const methodOverride = require('method-override');
 
 dotenv.config();
 
@@ -37,6 +43,9 @@ app.set('views', path.join(__dirname, '../frontend/views'));
 // Serve static files
 app.use(express.static(path.join(__dirname, "../frontend/public")));
 app.use(express.static('public'));
+
+//Handling method-override
+app.use(methodOverride('_method'));
 
 // Handling Post Request
 app.use(express.urlencoded({ extended: true }));
@@ -65,6 +74,11 @@ app.use((req, res, next) => {
 app.use('/api/disasters', disasterRoutes);
 app.use('/auth', registerRoutes);
 app.use('/drone', droneRoutes);
+app.use('/ngo', ngoRoutes);
+app.use('/citizen', citizenRoutes);
+app.use('/admin', adminRoutes);
+app.use('/resources', resourceRoutes);
+app.use('/chatBot', chatBotRoutes);
 app.use('/', homeRoutes);
 
 // Database Set-up

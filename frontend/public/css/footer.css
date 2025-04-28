@@ -1,0 +1,140 @@
+
+/* Footer */
+.full-width-footer {
+    width: 100vw;
+    background: #121212;
+    color: #ffffff;
+    padding: 80px 20px;
+    margin-top: 40px;
+    text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
+    z-index: 1000;
+
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Footer Top */
+.footer-top h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.footer-top p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* Footer Links */
+.footer-links-container {
+    margin: 30px 0;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.footer-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #ff4b2b;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 75, 43, 0.5);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

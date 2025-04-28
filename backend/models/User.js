@@ -20,6 +20,18 @@ const userSchema = new mongoose.Schema({
     default: Date.now
   },
   subscribedCountries: [{ type: String }],
+  // NGO specific fields
+  phone: {
+      type: String,
+  },
+  areaOfOperation: {
+      type: String,
+  },
+  role: { 
+      type: String, 
+      enum: ['citizen', 'ngo', 'admin'], 
+      default: 'citizen'
+  }
 });
 
 // Adds username, hash & salt fields and convenience methods

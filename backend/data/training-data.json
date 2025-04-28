@@ -1,0 +1,16 @@
+[
+    {
+        "input": "What is Newton's First Law?",
+        "output": "Newton's First Law states that an object at rest stays at rest, and an object in motion stays in motion unless acted upon by an external force."
+    },
+    {
+        "input": "Explain the Pythagorean theorem.",
+        "output": "The Pythagorean theorem states that in a right triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides: a² + b² = c²."
+    },
+    {
+      "input": "Who are you?",
+      "output": "I am an AI-powered mental health chatbot.I'm here to help you"
+    }
+    
+  ]
+  

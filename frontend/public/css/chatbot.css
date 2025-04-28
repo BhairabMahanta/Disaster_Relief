@@ -1,0 +1,190 @@
+:root {
+    --background-gradient: linear-gradient(135deg, #ffebee, #ffffff);
+    --primary-color: #b71c1c;
+    --secondary-color: #ff9800;
+    --chat-bg: #ffffff;
+    --user-bubble: #d32f2f;
+    --bot-bubble: #ffccbc;
+    --text-color: #333;
+    --border-radius: 16px;
+    --shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mainbody{
+    font-family: "PT Serif", serif;
+    background: var(--background-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .chat-window {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 600px;
+    background: var(--chat-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border: 2px solid var(--secondary-color);
+    transform: scale(0.9);
+    animation: popUp 0.4s ease-in-out forwards;
+  }
+  
+  @keyframes popUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .chat-header {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    animation: slideDown 0.5s ease-in-out;
+  }
+  
+  @keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .chat {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #ffebee;
+    border-left: 4px dashed var(--secondary-color);
+    padding-left: 20px;
+    font-size: 16px;
+  }
+  
+  .chat .user p, .chat .model p {
+    padding: 12px 16px;
+    border-radius: var(--border-radius);
+    max-width: 75%;
+    box-shadow: var(--shadow);
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeInChat 0.4s ease-in-out forwards, pulse 1s infinite alternate;
+  }
+  
+  @keyframes fadeInChat {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.02); }
+  }
+  
+  .chat .user {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .chat .user p {
+    background: var(--user-bubble);
+    color: white;
+  }
+  
+  .chat .model {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .chat .model p {
+    background: var(--bot-bubble);
+    color: var(--text-color);
+  }
+  
+  .input-area {
+    display: flex;
+    padding: 12px;
+    background: white;
+    border-top: 2px solid var(--secondary-color);
+    animation: slideUp 0.5s ease-in-out;
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .input-area input {
+    flex: 1;
+    height: 45px;
+    border: none;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    background: #ffe0b2;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .input-area input:focus {
+    background: #ffcc80;
+    outline: none;
+  }
+  
+  .input-area button {
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    animation: bounce 1.5s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  .input-area button:hover {
+    background: var(--secondary-color);
+    transform: scale(1.1);
+  }
+  .chatbot-animation {
+    font-size: 50px;
+    animation: wave 1.5s infinite;
+  }
+  @keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-10deg); }
+  }
+  
+  @keyframes borderGlow {
+    0% {
+      border-image-source: linear-gradient(90deg, #ff9800, #b71c1c, #ff9800);
+    }
+    50% {
+      border-image-source: linear-gradient(90deg, #b71c1c, #ff9800, #b71c1c);
+    }
+    100% {
+      border-image-source: linear-gradient(90deg, #ff9800, #b71c1c, #ff9800);
+    }
+  }
+  

@@ -1,0 +1,337 @@
+/* ========================== */
+/* 🔹 GLOBAL STYLES */
+/* ========================== */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e8f5e9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* ========================== */
+/* 🔹 EMERGENCY BUTTON */
+/* ========================== */
+.emergency-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+#emergency-btn {
+    background-color: #d32f2f;
+    color: #fff;
+    border: 2px solid #b71c1c;
+    border-radius: 25px;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#emergency-btn:hover {
+    background-color: #b71c1c;
+    transform: scale(1.08);
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5);
+}
+
+#emergency-options {
+    background-color: #ffffff;
+    border: 2px solid #d32f2f;
+    border-radius: 10px;
+    margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+#emergency-options button {
+    background: none;
+    border: none;
+    color: #d32f2f;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+#emergency-options button:hover {
+    background-color: #ffe5e5;
+}
+
+/* ========================== */
+/* 🔹 HERO SECTION (Centered) */
+/* ========================== */
+.hero {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 5rem 2rem;
+    width: 100%;
+    max-width: 800px;
+    border: 2px solid #2e7d32;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.8rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* ========================== */
+/* 🔹 CARDS SECTION (Not Centered) */
+/* ========================== */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    justify-content: center;
+}
+.content>a{
+    text-decoration: none;
+}
+.card {
+    width: 540px;
+    height: 340px;
+    background: linear-gradient(135deg, #4CAF50, #66bb6a);
+    border-radius: 20px;
+    border: 2px solid #2e7d32;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.07) ;
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ========================== */
+/* 🔹 CENTRALIZED SECTIONS */
+/* ========================== */
+.join-us,
+.donation,
+.contact {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 2px solid #4CAF50;
+    border-radius: 12px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================== */
+/* 🔹 MODAL DESIGN */
+/* ========================== */
+.modal {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 7.5rem;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================== */
+/* 🔹 FORM DESIGN */
+/* ========================== */
+form {
+    background-color: #ffffff;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    border: 2px solid #4CAF50;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 3rem auto;
+    text-align: center;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus {
+    border-color: #2e7d32;
+    background-color: #f1f8f5;
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.2);
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #2e7d32;
+    transform: scale(1.07);
+}
+
+/* ========================== */
+/* 🔹 RESPONSIVE DESIGN */
+/* ========================== */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    #emergency-btn {
+        padding: 10px 20px;
+    }
+}
+
+/* ========================== */
+/* 🔹 HIDDEN CLASS (FOR JOIN US FORMS) */
+/* ========================== */
+.hidden {
+    display: none !important;
+}
+
+/* ========================== */
+/* 🔹 THEME CUSTOMIZER BUTTON */
+/* ========================== */
+.theme-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+#theme-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#theme-btn:hover {
+    background-color: #388e3c;
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0, 128, 0, 0.5);
+}
+
+/* ========================== */
+/* 🔹 THEME OPTIONS PANEL */
+/* ========================== */
+#theme-options {
+    background-color: #ffffff;
+    border: 2px solid #4CAF50;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    margin-top: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+#theme-options label {
+    display: block;
+    margin: 0.5rem 0 0.3rem;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+#theme-options input[type="color"] {
+    width: 100%;
+    height: 35px;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#apply-theme-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#apply-theme-btn:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+/* ========================== */
+/* 🔹 Utility Class */
+/* ========================== */
+.hidden {
+    display: none;
+}

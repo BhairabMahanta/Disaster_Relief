@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/stats.css">
     <link rel="stylesheet" href="/css/disaster_map.css">
     <link rel="stylesheet" href="/css/disasterAlert2.css">
+    <link rel="stylesheet" href="/css/loader.css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -24,9 +25,10 @@
       </style>
 </head>
 <body class="bg-grey-100" id="chamchamcham">
-    
+  <%-include('../partials/loader')%>
     <%- include('../partials/navbar') %>
 <br><br>
+
   <%-include('../partials/emergency')%>
   <%- include('../partials/header')%>
   <%- include('../partials/graphs')%>
@@ -150,5 +152,6 @@
 
   <script src="../public/js/homeChatBot.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/loader.js"></script>
 </body>
 </html>

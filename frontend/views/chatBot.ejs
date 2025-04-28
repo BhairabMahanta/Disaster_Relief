@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Aid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/chatbot.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/loader.css">
+    <link rel="stylesheet" href="/css/home.css">
+  </head>
+  <body>
+    <%-include('../partials/loader')%>
+    <%- include('../partials/navbar') %>
+    <br> 
+<div class="mainbody">
+  <div class="chat-open">
+    <section class="chat-container">
+      <div class="chatbot-animation">
+        ⚡
+      </div>
+      <section class="chat-window">
+        <header class="chat-header">
+          <h2>🌍 Crisis Response Chatbot</h2>
+        </header>
+        
+        <div class="chat">
+          <div class="model">
+            <p>⚡ Hello! How can I assist you in this emergency situation?</p>
+          </div>
+        </div>
+        
+        <div class="input-area">
+          <input
+            type="text"
+            placeholder="Ask for help or information..."
+            aria-label="Chat input"
+          />
+          <button aria-label="Send message">
+            <img src="/img/senqsd-icon.png" alt="Send" />
+          </button>
+        </div>
+      </section>
+    </section>
+  </div>
+</div>
+  
+<footer class="full-width-footer">
+  <div class="footer-container">
+      <div class="footer-top">
+          <h2>Your Company</h2>
+          <p>Empowering communities through innovation.</p>
+      </div>
+
+      <div class="footer-links-container">
+          <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+          </ul>
+      </div>
+
+      <div class="social-icons">
+          <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+          <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+          <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+      </div>
+
+      <div class="footer-bottom">
+          <p>&copy; 2025 Your Company. All rights reserved.</p>
+      </div>
+  </div>
+</footer>
+  <script type="importmap">
+    {
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+  </script>
+  
+  <script type="module" src="/js/chatbot.js"></script>
+  <script src="/js/loader.js"></script>
+</body>
+</html>

@@ -633,6 +633,9 @@ input:checked + .slider:before {
 /* Service Card */
 .service-card {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 80vw !important;
+    position: relative;
+    right: 19rem;
 }
 
 .service-card:hover {

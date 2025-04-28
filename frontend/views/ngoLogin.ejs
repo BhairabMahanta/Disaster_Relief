@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NGO Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/loader.css">
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <%-include('../partials/loader')%>
+  <%- include('../partials/navbar') %>
+  <br><br>
+  <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-6 text-center">NGO Login</h2>
+
+    <form action="/ngo/login" method="POST" class="space-y-4">
+
+      <div>
+        <label class="block text-gray-700">Email Address</label>
+        <input type="email" name="email" required class="w-full p-2 border rounded-lg">
+      </div>
+
+      <div>
+        <label class="block text-gray-700">Password</label>
+        <input type="password" name="password" required class="w-full p-2 border rounded-lg">
+      </div>
+
+      <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white p-2 rounded-lg transition">
+        Login
+      </button>
+
+    </form>
+
+    <p class="mt-4 text-center text-sm text-gray-600">
+      Don't have an account? 
+      <a href="/ngo/register" class="text-green-500 hover:underline">Register here</a>.
+    </p>
+
+  </div>
+  <script src="/js/loader.js"></script>
+</body>
+</html>

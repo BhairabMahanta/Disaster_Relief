@@ -6,8 +6,10 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="/css/home.css">
   <link rel="stylesheet" href="/css/drone.css">
+  <link rel="stylesheet" href="/css/loader.css">
 </head>
 <body>
+  <%-include('../partials/loader')%>
   <%- include('../partials/navbar') %>
 
     <img src="/img/drone2.jpg" alt="Drone" />
@@ -196,9 +198,7 @@ async function pollMissionStatus() {
     setTimeout(pollMissionStatus, 3000);
   }
 }
-
-
   </script>
-
+  <script src="/js/loader.js"></script>
 </body>
 </html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Request Help</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="/css/loader.css">
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <%-include('../partials/loader')%>
+  <%- include('../partials/navbar') %>
+  <br><br>
+    <!-- Navbar -->
+    <nav class="bg-blue-600 p-4 text-white">
+      <h1 class="text-xl font-bold">Request Help</h1>
+    </nav>
+  
+    <!-- Form -->
+    <div class="p-6 max-w-md mx-auto mt-8 bg-white rounded-lg shadow-lg">
+      <h2 class="text-2xl font-semibold mb-6 text-center">Need Help?</h2>
+  
+      <form action="/citizen/requestHelp" method="POST" class="space-y-4">
+        
+        <!-- Location Map -->
+        <div>
+          <label class="block text-gray-700">Location</label>
+          <div id="map" class="w-full h-64 border rounded-lg"></div>
+          <button type="button" id="useLocation" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg mt-4 w-full">
+            Use My Current Location
+          </button>
+          <input type="hidden" name="location" id="locationField" />
+        </div>
+  
+        <!-- Description -->
+        <div>
+          <label class="block text-gray-700">Description</label>
+          <textarea name="description" required class="w-full p-2 border rounded-lg" placeholder="Describe your situation" rows="4"></textarea>
+        </div>
+  
+        <!-- Submit Button -->
+        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-lg transition">
+          Submit Request
+        </button>
+      </form>
+    </div>
+  
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  
+    <script>
+      // Initialize the map
+      const map = L.map('map').setView([51.505, -0.09], 13); // Default location for initial map view
+  
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+  
+      let marker;
+  
+      // Function to update marker and hidden field with location
+      function updateLocation(lat, lng) {
+        if (marker) {
+          marker.setLatLng([lat, lng]);
+        } else {
+          marker = L.marker([lat, lng]).addTo(map);
+        }
+        map.setView([lat, lng], 13);
+        document.getElementById('locationField').value = `${lat},${lng}`; // Save location to hidden input
+      }
+  
+      // Add a click event to manually select location
+      map.on('click', function (e) {
+        updateLocation(e.latlng.lat, e.latlng.lng);
+      });
+  
+      // Use current location if button clicked
+      document.getElementById('useLocation').addEventListener('click', function () {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function (position) {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+            updateLocation(lat, lng);
+          }, function (error) {
+            alert("Unable to retrieve your location.");
+          });
+        } else {
+          alert("Geolocation is not supported by this browser.");
+        }
+      });
+    </script>
+    <script src="/js/loader.js"></script>
+  </body>
+  
+</html>

@@ -4,9 +4,11 @@
   <title>Disaster Relief</title>
   <link rel="stylesheet" href="/css/home.css">
   <link rel="stylesheet" href="/css/disasterAlert.css">
+  <link rel="stylesheet" href="/css/loader.css">
 </head>
 
 <body>
+  <%-include('../partials/loader')%>
   <%- include('../partials/navbar') %>
   <br><br><br> 
   <h1>Real-Time Disaster Alerts</h1>
@@ -162,6 +164,6 @@
       <button type="submit" id="unsubscribeButton">Unsubscribe from Alerts</button>
     </form>
   <% } %>
-
+  <script src="/js/loader.js"></script>
 </body>
 </html>
