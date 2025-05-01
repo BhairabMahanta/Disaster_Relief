@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Aid</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Weather Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.1.0/css/weather-icons.min.css">
+    <link rel="stylesheet" href="/css/weather.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/loader.css">
+    
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center h-screen" id="app-body">
+    <%-include('../partials/loader')%>
+    <%- include('../partials/navbar') %>
+    <br><br><br>  
+    <div class="w-3/4 h-3/4 bg-white shadow-lg rounded-lg flex overflow-hidden" style="margin-top: 5rem;">
+        <!-- Left Section: Weather Details -->
+        <div class="w-2/3 p-6 text-white" id="weather-section">
+            <h1 class="text-3xl font-bold">Weather Details</h1>
+            <!-- Search Bar -->
+            <input type="text" id="city-search"
+                class="mt-2 p-2 text-black rounded shadow-sm focus:ring focus:ring-blue-200"
+                placeholder="Enter city">
+            <button onclick="searchCity()" class="ml-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">Search</button>
+            <p id="location" class="text-lg mt-2">Fetching location...</p>
+            <i id="weather-icon" class="wi wi-day-sunny text-6xl mt-2"></i>
+            <p id="temperature" class="text-2xl mt-4">-- °C</p>
+            <p id="humidity" class="text-lg">Humidity: --%</p>
+            <p id="wind-speed" class="text-lg">Wind Speed: -- knots</p>
+            <p id="uv-index" class="text-lg">UV Index: --</p>
+            <p id="air-quality" class="text-lg">Air Quality: --</p>
+            <!-- Hourly Forecast -->
+            <div id="hourly-forecast" class="mt-4">
+                <h3 class="text-xl font-semibold">Hourly Forecast</h3>
+                <div id="hourly-container" class="flex overflow-x-auto">
+                    <!-- Hourly forecast items will be added here -->
+                </div>
+            </div>
+
+            <!-- Weekly Forecast -->
+            <div id="weekly-forecast" class="mt-4">
+                <h3 class="text-xl font-semibold">7-Day Forecast</h3>
+                <div id="weekly-container" class="flex overflow-x-auto">
+                    <!-- Weekly forecast items will be added here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section: Alerts -->
+        <div class="w-1/3 bg-red-100 p-6 flex flex-col justify-center items-center" id="alert-section">
+            <h2 class="text-2xl font-bold text-red-600">Alerts</h2>
+            <p id="alert-message" class="mt-4 text-red-700 font-semibold">No alerts.</p>
+        </div>
+    </div>
+
+    <!-- Rain Animation -->
+    <div class="rain"></div>
+
+    <!-- Snow Animation -->
+    <div class="snow"></div>
+
+    <!-- Alert Modal -->
+    <div id="alert-modal" class="modal">
+        <div class="modal-content">
+            <span onclick="closeModal()" style="float:right; cursor:pointer;">&times;</span>
+            <h2 class="text-2xl font-bold text-red-600">Severe Weather Alert!</h2>
+            <p id="modal-alert-message" class="mt-4 text-red-700 font-semibold">Please take necessary precautions.</p>
+        </div>
+    </div>
+    <footer class="full-width-footer">
+        <div class="footer-container">
+          <div class="footer-top">
+            <h2>Disaster Relief Team</h2>
+            <p>Your safe space for mental wellness.</p>
+          </div>
+          <div class="footer-links-container">
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="social-icons">
+            <a href="#"><img src="/img/facebook.jpg" alt="Facebook"></a>
+            <a href="#"><img src="/img/twitter.jpg" alt="Twitter"></a>
+            <a href="#"><img src="/img/insta.jpg" alt="Instagram"></a>
+            <a href="#"><img src="/img/linkedin.jpg" alt="LinkedIn"></a>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2025 MindCare. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+  
+  
+    <script src="/js/weather.js"></script>
+    <script src="/js/loader.js"></script>
+</body>
+
+</html>

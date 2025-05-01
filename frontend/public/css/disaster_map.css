@@ -1,34 +1,106 @@
-#map {
-    height: 600px;
-    width: 100vh; /* Set the map height */
-}
-
-/* Style for the legend */
-.legend {
+/* Main layout: everything stacked top-to-bottom */
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* Desktop: map + legend side-by-side */
+  .map-and-info {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Map styling */
+  #map {
+    flex: 2;
+    min-width: 300px;
+    width: 100%;
+    height: 60vh;
+    max-height: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Legend styling */
+  .legend {
+    flex: 1;
     background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    max-width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     font-size: 14px;
-}
-
-.legend div {
-    margin-bottom: 8px;
-}
-
-.legend span {
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    margin-right: 10px;
-    border-radius: 50%;
-}
-
-.legend .earthquake { background-color: red; }
-.legend .tsunami { background-color: blue; }
-.legend .flood { background-color: lightblue; }
-.legend .volcano { background-color: brown; }
-.legend .wildfire { background-color: orange; }
-
-
+    max-width: 300px;
+    height: fit-content;
+  }
+  
+  /* Real-Time Alerts container */
+  .scroll-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* Individual alert card */
+  .alert {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-left: 4px solid #4f46e5;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .alert h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .alert h3 a {
+    text-decoration: none;
+    color: #111827;
+  }
+  
+  .alert p {
+    margin: 0.25rem 0;
+    color: #374151;
+  }
+  
+  .alert small {
+    color: #6b7280;
+    font-size: 0.85rem;
+  }
+  
+  /* ✅ Mobile responsiveness */
+  @media (max-width: 550px) {
+    .map-and-info {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #map {
+      height: 50vh;
+    }
+  
+    .legend {
+      width: 100%;
+      margin-top: 1rem;
+    }
+  
+    .scroll-container {
+      margin-top: 0;
+    }
+    .mainContent{
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap; 
+    }
+  }
+  

@@ -1,9 +1,9 @@
-
 /* Navbar Styling */
 .navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* make it wrap on small screens */
     width: 100%;
     background: #111;
     padding: 15px 0;
@@ -17,10 +17,12 @@
 /* Navbar Container */
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    width: 80%;
-    max-width: 1020px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Navbar Links */
@@ -33,6 +35,7 @@
     text-decoration: none;
     padding: 10px 15px;
     transition: 0.3s ease-in-out;
+    white-space: nowrap;
 }
 
 /* Hover Effect - Neon Glow */
@@ -49,7 +52,7 @@
     left: 50%;
     width: 0;
     height: 3px;
-    background:goldenrod;
+    background: goldenrod;
     transition: 0.4s ease-in-out;
     transform: translateX(-50%);
 }
@@ -58,46 +61,120 @@
     width: 100%;
 }
 
-/* Mobile-Friendly Navbar */
-@media (max-width: 768px) {
+/* Responsive Navbar */
+@media (max-width: 1024px) {
     .nav-container {
         flex-direction: column;
-        width: 100%;
-        text-align: center;
+        align-items: center;
     }
 
     .nav-item {
         padding: 10px;
         font-size: 16px;
     }
+
+    .nav-auth {
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .user-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .nav-item.ml-20 {
+        margin-left: 0; /* remove left margin on small screens */
+    }
 }
 
+/* Responsive Fix: Cards (optional if related to same layout) */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stack on small screens */
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+.mainbody {
+    width: 100vw;
+    margin-top: 70px; /* prevent navbar from overlapping */
+}
+/* Mobile-Friendly Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
         align-items: center;
     }
-    
-    .card {
-        width: 90%; /* Takes full width on mobile */
-        max-width: 400px;
+
+    .nav-container, .nav-auth {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .nav-item {
+        padding: 10px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .mainbody {
+        margin-top: 280px; /* increase space for taller mobile navbar */
     }
 }
 
-/* Responsive Fix: Stack on small screens */
-@media (max-width: 1024px) {
-    .card {
-        width: calc(50% - 25px); /* 2 per row on medium screens */
-    }
-}
 
 @media (max-width: 768px) {
-    .card {
-        width: 100%; /* Full width on mobile */
-        max-width: 400px;
+    .navbar {
+        margin-bottom: 220px; /* Pushes content below navbar */
     }
 }
-
-.mainbody{
-    width: 100vw;
-}
+/* Hide hamburger by default */
+.nav-mobile {
+    display: none;
+  }
+  
+  /* Hide menu by default on mobile */
+  @media (max-width: 768px) {
+    .nav-mobile {
+      display: block;
+      position: absolute;
+      left: 20px;
+      top: 15px;
+      z-index: 1100;
+    }
+    .nav-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      outline: none;
+    }
+    .nav-container {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: #111;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .nav-container.nav-menu-active {
+      display: flex;
+    }
+    .nav-auth {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+  

@@ -1,23 +1,38 @@
 <!-- views/partials/navbar.ejs -->
 <nav class="navbar">
-    <div class="nav-container">
-        <a href="/" class="nav-item">Home</a>
-        <a href="/chatBot" class="nav-item">Chat-Bot</a>
-        <a href="/api/disasters" class="nav-item">Disaster-Alerts</a>
-        <a href="/api/disasters" class="nav-item">Weather-Alerts</a>
-        <a href="/ngo" class="nav-item">NGO</a>
-        <a href="/drone" class="nav-item">Drone-Request</a>
-        <a href="/resources" class="nav-item">Resources</a>
+    <div class="nav-mobile">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu">
+        &#9776;
+      </button>
+    </div>
+    <div class="nav-container" id="nav-menu">
+      <a href="/" class="nav-item">Home</a>
+      <a href="/chatBot" class="nav-item">Chat-Bot</a>
+      <a href="/api/disasters" class="nav-item">Disaster-Alerts</a>
+      <a href="/weather" class="nav-item">Weather-Alerts</a>
+      <a href="/ngo" class="nav-item">NGO</a>
+      <a href="/drone" class="nav-item">Drone-Request</a>
+      <a href="/resources" class="nav-item">Resources</a>
     </div>
     <div class="nav-auth">
-        <% if (user) { %>
-            <div class="user-info">
-                <a href="http://localhost:8080/auth/logout" class="nav-item">Logout</a>
-                <span class="nav-item ml-20 bg-gray-700 px-3 py-1 rounded-lg border border-yellow-400 text-yellow-400 font-bold"><%= user.name %></span>
-            </div>
-        <% } else { %>
-            <a href="http://localhost:8080/auth/login?" class="nav-item">Login</a>
-            <a href="http://localhost:8080/auth/register" class="nav-item">Signup</a>
-        <% } %>
+      <% if (user) { %>
+        <div class="user-info">
+          <a href="http://localhost:8080/auth/logout" class="nav-item">Logout</a>
+          <span class="nav-item ml-20 bg-gray-700 px-3 py-1 rounded-lg border border-yellow-400 text-yellow-400 font-bold"><%= user.name %></span>
+        </div>
+      <% } else { %>
+        <a href="http://localhost:8080/auth/login?" class="nav-item">Login</a>
+        <a href="http://localhost:8080/auth/register" class="nav-item">Signup</a>
+      <% } %>
     </div>
-</nav>
+  </nav>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      navToggle.addEventListener('click', function () {
+        navMenu.classList.toggle('nav-menu-active');
+      });
+    });
+  </script>
+    

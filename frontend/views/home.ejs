@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/css/disaster_map.css">
     <link rel="stylesheet" href="/css/disasterAlert2.css">
     <link rel="stylesheet" href="/css/loader.css">
+    <link rel="stylesheet" href="/css/graph.css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -42,114 +43,172 @@
   <%- include('../partials/aboutUs') %>
   <%- include('../partials/footer') %>
 
-
-<script>
-  const contactList = JSON.parse(localStorage.getItem('emergencyContacts')) || [];
-
-  // Toggle the emergency menu visibility
-  document.getElementById('emergency-btn').addEventListener('click', function () {
-    document.getElementById('menu').classList.toggle('active');
-  });
-
-  // Open Contact Selection for Voice Call, Video Call, etc.
-  const openContactSelection = (option) => {
-    const contactListContainer = document.getElementById('contact-list');
-    contactListContainer.innerHTML = ''; // Clear previous contact list
-
-    if (contactList.length === 0) {
-      contactListContainer.innerHTML = '<li>No contacts saved</li>';
-    } else {
-      contactList.forEach(contact => {
-        const li = document.createElement('li');
-        li.innerHTML = `${contact.name} (${contact.phone}) 
-                          <span class="select-option" data-option="${option}" data-contact="${contact.phone}">Select</span>
-                          <span class="remove-number" data-contact="${contact.phone}">×</span>`;
-        contactListContainer.appendChild(li);
-      });
-    }
-
-    document.getElementById('contact-selection').style.display = 'block';
-  };
-
-  // Select an emergency contact
-  document.getElementById('contact-list').addEventListener('click', function (event) {
-    if (event.target.classList.contains('select-option')) {
-      const contactPhone = event.target.dataset.contact;
-      const option = event.target.dataset.option;
-
-      // Perform the action once the contact is selected
-      alert(`${option.charAt(0).toUpperCase() + option.slice(1)} to ${contactPhone}`);
-      document.getElementById('contact-selection').style.display = 'none';
-    }
-
-    if (event.target.classList.contains('remove-number')) {
-      const contactPhone = event.target.dataset.contact;
-      removeContact(contactPhone);
-    }
-  });
-
-  // Close Contact Selection
-  document.getElementById('close-contact-selection').addEventListener('click', function () {
-    document.getElementById('contact-selection').style.display = 'none';
-  });
-
-  // Add New Emergency Number
-  document.getElementById('add-remove-number').addEventListener('click', function () {
-    document.getElementById('add-number-modal').style.display = 'block';
-  });
-
-  // Save the new contact to Local Storage
-  document.getElementById('save-contact').addEventListener('click', function () {
-    const name = document.getElementById('contact-name').value;
-    const phone = document.getElementById('contact-phone').value;
-    if (name && phone) {
-      contactList.push({ name, phone });
-      localStorage.setItem('emergencyContacts', JSON.stringify(contactList));
-      alert('Contact saved successfully!');
-      document.getElementById('contact-name').value = '';
-      document.getElementById('contact-phone').value = '';
-      document.getElementById('add-number-modal').style.display = 'none';
-    } else {
-      alert('Please enter both name and phone number');
-    }
-  });
-
-  // Close Add Contact Modal
-  document.getElementById('close-add-modal').addEventListener('click', function () {
-    document.getElementById('add-number-modal').style.display = 'none';
-  });
-
-  // Remove a Contact from Local Storage
-  const removeContact = (phone) => {
-    // Filter out the contact by phone number
-    const updatedContacts = contactList.filter(contact => contact.phone !== phone);
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const contactList = document.getElementById("contact-list");
+      const emergencyBtn = document.getElementById("emergency-btn");
+      const menu = document.getElementById("menu");
+      const contactSelection = document.getElementById("contact-selection");
+      const addNumberModal = document.getElementById("add-number-modal");
     
-    // Update localStorage with the new list
-    localStorage.setItem('emergencyContacts', JSON.stringify(updatedContacts));
-
-    // Update the contact list in the DOM
-    alert('Contact removed successfully!');
-    document.getElementById('contact-selection').style.display = 'none';
-    openContactSelection(); // Refresh the contact list
-  };
-
-  // Functionality for each of the options (Voice Call, Video Call, etc.)
-  const handleOptionSelection = (option) => {
-    if (contactList.length === 0) {
-      alert('No contacts available. Please add an emergency contact first.');
-    } else {
-      alert(`You have selected ${option}. Now you can choose a contact.`);
-      openContactSelection(option);
-    }
-  };
-
-  document.getElementById('voice-call').addEventListener('click', () => handleOptionSelection('Voice Call'));
-  document.getElementById('video-call').addEventListener('click', () => handleOptionSelection('Video Call'));
-  document.getElementById('send-voice').addEventListener('click', () => handleOptionSelection('Send Voice'));
-  document.getElementById('send-location').addEventListener('click', () => handleOptionSelection('Send Location'));
-
-</script>
-
+      const voiceCallBtn = document.getElementById("voice-call");
+      const whatsappCallBtn = document.getElementById("whatsapp-call");
+      const addNumberBtn = document.getElementById("add-remove-number");
+      const closeContactBtn = document.getElementById("close-contact-selection");
+      const closeAddBtn = document.getElementById("close-add-modal");
+    
+      // Detect mobile
+      function isMobile() {
+        return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      }
+    
+      // Get correct WhatsApp link
+      function getWhatsAppLink(phone) {
+        return isMobile()
+          ? `whatsapp://send?phone=${phone}`
+          : `https://wa.me/${phone}`;
+      }
+    
+      // Load contacts
+      async function loadContacts() {
+        const response = await fetch("/emergency/contacts");
+        const contacts = await response.json();
+    
+        contactList.innerHTML = "";
+    
+        // Always add the top priority number
+        const emergencyContact = {
+          name: "Priority Emergency",
+          phone: "7099774852"
+        };
+    
+        [emergencyContact, ...contacts.filter(c => c.phone !== "7099774852")].forEach(contact => {
+          const telLink = `tel:${contact.phone}`;
+          const whatsappLink = getWhatsAppLink(contact.phone);
+    
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <strong>${contact.name}</strong><br>
+            <a href="${telLink}">📞 Call</a> | 
+            <a href="${whatsappLink}" target="_blank">💬 WhatsApp</a>
+            ${contact.phone !== "7099774852" ? ` | <button onclick="deleteContact('${contact.phone}')">❌ Delete</button>` : ""}
+          `;
+          contactList.appendChild(li);
+        });
+      }
+    
+      // Save contact
+      document.getElementById("save-contact").addEventListener("click", () => {
+        const name = document.getElementById("contact-name").value;
+        const phone = document.getElementById("contact-phone").value;
+    
+        fetch("/emergency/contacts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, phone }),
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) location.reload();
+        });
+      });
+    
+      // Delete contact
+      window.deleteContact = (phone) => {
+        fetch(`/emergency/contacts/${phone}`, {
+          method: "DELETE"
+        })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) loadContacts();
+        });
+      };
+    
+      // Button events
+      emergencyBtn.addEventListener("click", () => {
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+      });
+    
+      voiceCallBtn.addEventListener("click", () => {
+        menu.style.display = "none";
+        contactSelection.style.display = "block";
+        loadContacts();
+      });
+    
+      whatsappCallBtn.addEventListener("click", () => {
+        menu.style.display = "none";
+        contactSelection.style.display = "block";
+        loadContacts();
+      });
+    
+      addNumberBtn.addEventListener("click", () => {
+        menu.style.display = "none";
+        addNumberModal.style.display = "block";
+      });
+    
+      closeContactBtn.addEventListener("click", () => {
+        contactSelection.style.display = "none";
+      });
+    
+      closeAddBtn.addEventListener("click", () => {
+        addNumberModal.style.display = "none";
+      });
+    });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const sosBtn = document.getElementById("send-sos");
+      
+        sosBtn.addEventListener("click", async () => {
+          try {
+            // Get Geolocation
+            const position = await new Promise((resolve, reject) =>
+              navigator.geolocation.getCurrentPosition(resolve, reject)
+            );
+            const { latitude, longitude } = position.coords;
+      
+            // Record Audio (5 seconds)
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            const mediaRecorder = new MediaRecorder(stream);
+            const audioChunks = [];
+      
+            mediaRecorder.ondataavailable = event => audioChunks.push(event.data);
+      
+            mediaRecorder.onstop = async () => {
+              const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+              const formData = new FormData();
+              formData.append("audio", audioBlob);
+              formData.append("lat", latitude);
+              formData.append("lng", longitude);
+      
+              // Send to backend
+              const response = await fetch("/emergency/sos", {
+                method: "POST",
+                body: formData,
+              });
+      
+              const result = await response.json();
+              if (result.success) {
+                alert("🚨 SOS Sent Successfully!");
+              } else {
+                alert("❌ Failed to send SOS.");
+              }
+            };
+      
+            mediaRecorder.start();
+      
+            setTimeout(() => {
+              mediaRecorder.stop();
+            }, 5000); // Record for 5 sec
+      
+          } catch (error) {
+            console.error("Error during SOS:", error);
+            alert("Failed to send SOS. Please check permissions.");
+          }
+        });
+      });
+      </script>
+      
   <script src="../public/js/homeChatBot.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/js/loader.js"></script>

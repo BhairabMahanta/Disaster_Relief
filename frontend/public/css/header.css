@@ -93,3 +93,80 @@
   display: block;
   object-fit: cover;
 }
+/* Default styles already provided above */
+
+/* Tablet: 900px and below */
+@media (max-width: 900px) {
+  .cards {
+    justify-content: center;
+    gap: 2rem;
+  }
+  .card {
+    width: 220px;
+    height: 340px;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+  }
+  .video-slider-container {
+    width: 95vw;
+    height: 280px;
+    left: 0;
+  }
+}
+
+/* Mobile: 600px and below */
+@media (max-width: 600px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    margin: 0;
+  }
+  .card {
+    width: 90vw;
+    max-width: 340px;
+    height: 220px;
+    margin-left: 0;
+    margin-bottom: 1.2rem;
+    font-size: 0.9rem;
+  }
+  .card-content {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+  .card-title {
+    font-size: 0.95rem;
+    padding: 6px 0;
+  }
+  .video-slider-container {
+    width: 98vw;
+    height: 230px;
+    left: 0;
+    margin: 1rem 0;
+    border-radius: 8px;
+  }
+  .responsive-video {
+    height: 100%;
+    object-fit: cover;
+  }
+  header.mainimage,
+  header.mainimage img,
+  .mainimage .absolute {
+    height: 180px !important;
+    min-height: 120px;
+  }
+  .mainimage h1 {
+    font-size: 1.3rem;
+    padding: 0 0.5rem;
+  }
+  .mainimage p {
+    font-size: 1rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 600px) {
+  .card {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+}

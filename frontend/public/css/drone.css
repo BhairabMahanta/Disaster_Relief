@@ -140,3 +140,9 @@ img {
     width: 100%;
   }
 }
+/* Hide the fixed drone image on small screens */
+@media (max-width: 900px) {
+  .drone-img {
+    display: none;
+  }
+}

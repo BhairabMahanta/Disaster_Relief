@@ -1236,3 +1236,159 @@ body.dark-mode #talkToMeOptions li a:hover {
     
     padding-right: 3rem;
 }
+/* Hide hamburger by default */
+.nav-mobile {
+    display: none;
+  }
+  
+  /* Hide menu by default on mobile */
+  @media (max-width: 768px) {
+    .nav-mobile {
+      display: block;
+      position: absolute;
+      left: 20px;
+      top: 15px;
+      z-index: 1100;
+    }
+    .nav-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      outline: none;
+    }
+    .nav-container {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: #111;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .nav-container.nav-menu-active {
+      display: flex;
+    }
+    .nav-auth {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+  /* Container padding and section spacing */
+@media (max-width: 1024px) {
+    .p-6, section {
+      padding: 30px 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .p-6, section {
+      padding: 20px 5px;
+    }
+  }
+  @media (max-width: 600px) {
+    .emergency-container,
+    .chatbot-container {
+      right: 10px;
+      top: 10px;
+      bottom: 10px;
+    }
+    #emergency-btn {
+      padding: 10px 18px;
+      font-size: 15px;
+    }
+    .chatbot-button {
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+      line-height: 45px;
+    }
+  }
+/* Service Cards */
+@media (max-width: 900px) {
+    .service-card {
+      width: 95vw !important;
+      right: 0;
+      margin: 0 auto 20px auto;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .service-card {
+      width: 98vw !important;
+      padding: 10px;
+      right: 0;
+      margin: 0 auto 15px auto;
+    }
+  }
+  
+  /* Main Image */
+  @media (max-width: 900px) {
+    .mainimage {
+      height: 240px;
+    }
+  }
+  @media (max-width: 600px) {
+    .mainimage {
+      height: 120px;
+      border-radius: 0.5rem;
+    }
+  }
+/* Responsive Video */
+.responsive-video, .video-section video, iframe {
+    width: 100% !important;
+    max-width: 100vw !important;
+    height: auto !important;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 600px) {
+    canvas {
+      max-width: 98vw !important;
+      margin-left: 0 !important;
+    }
+  }
+  @media (max-width: 600px) {
+    .faq-item {
+      padding: 10px 10px;
+      font-size: 14px;
+    }
+    .about-us {
+      padding: 20px 5px;
+      font-size: 15px;
+    }
+    .about-btn {
+      padding: 10px 18px;
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 600px) {
+    .service-item {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 5px;
+      font-size: 14px;
+    }
+    .explore-btn {
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+    button, .about-btn, .explore-btn {
+      font-size: 14px;
+      padding: 8px 14px;
+    }
+  }
+  @media (max-width: 768px) {
+    .footer, .contact-us {
+      padding: 15px 5px;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+              

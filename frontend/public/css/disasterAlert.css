@@ -1,89 +1,156 @@
+/* Base Styles */
+body {
+  font-family: sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
-    text-align: center;
-    color: #333;
-  }
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin: 1.5rem 0;
+}
 
+.scroll-container {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  height: 420px;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Alert Cards */
+.alert {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-left: 5px solid #f44336;
+  background: #fff8f8;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  border-radius: 5px;
+}
+
+.alert h3 {
+  margin: 0;
+  color: #f44336;
+  font-size: 1.2rem;
+}
+
+.alert p {
+  margin: 8px 0;
+  color: #444;
+  font-size: 1rem;
+}
+
+.alert small {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+/* Form Styles */
+.filter-form {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 20px;
+  background: #eef1f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.filter-form label,
+.filter-form select,
+.filter-form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.filter-form button {
+  background: #f44336;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.filter-form button:hover {
+  background: #d32f2f;
+}
+
+#unsubscribeButton {
+  background-color: rgb(10, 230, 46);
+}
+
+a {
+  color: #f44336;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
   .scroll-container {
-    max-width: 900px;
-    margin: 20px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    height: 420px;
-    overflow-y: auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-
-  .alert {
-    margin-bottom: 20px;
-    padding: 15px;
-    border-left: 5px solid #f44336;
-    background: #fff8f8;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-    border-radius: 5px;
-  }
-
-  .alert h3 {
-    margin: 0;
-    color: #f44336;
-  }
-
-  .alert p {
-    margin: 8px 0;
-    color: #444;
-  }
-
-  .alert small {
-    color: #777;
+    width: 90%;
+    height: auto;
+    max-height: 60vh;
   }
 
   .filter-form {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #eef1f5;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    width: 90%;
+    padding: 25px;
   }
 
   .filter-form label,
   .filter-form select,
   .filter-form input {
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    font-size: 16px;
+    font-size: 1.1rem;
   }
 
   .filter-form button {
-    background: #f44336;
-    color: #fff;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
+    font-size: 1.1rem;
+    padding: 14px;
   }
 
-  .filter-form button:hover {
-    background: #d32f2f;
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
   }
 
-  body {
-    font-family: sans-serif;
-    background: #f7f7f7;
+  .filter-form {
+    width: 95%;
+    padding: 30px;
   }
 
-  a {
-    color: #f44336;
-    text-decoration: none;
+  .scroll-container {
+    width: 95%;
+    padding: 15px;
   }
 
-  a:hover {       
-    text-decoration: underline;
+  .alert h3 {
+    font-size: 1rem;
   }
-  #unsubscribeButton{
-    background-color: rgb(10, 230, 46);
+
+  .alert p,
+  .alert small {
+    font-size: 0.9rem;
   }
+}

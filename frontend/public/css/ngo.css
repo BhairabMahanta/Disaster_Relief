@@ -335,3 +335,11 @@ button:hover {
 .hidden {
     display: none;
 }
+@media (max-width: 550px) {
+    .hero{
+        width: 24rem;
+    }
+    .content{
+        width: 12rem;
+    }
+}

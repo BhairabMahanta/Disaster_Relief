@@ -1,13 +1,31 @@
 <div class="mainContent">
+  <div class="map-and-info">
     <div id="map"></div>
 
     <div class="legend">
-        <div><span class="earthquake"></span> Earthquake</div>
-        <div><span class="tsunami"></span> Tsunami</div>
-        <div><span class="flood"></span> Flood</div>
-        <div><span class="volcano"></span> Volcano</div>
-        <div><span class="wildfire"></span> Wildfire</div>
+      <div><span class="earthquake"></span> Earthquake</div>
+      <div><span class="tsunami"></span> Tsunami</div>
+      <div><span class="flood"></span> Flood</div>
+      <div><span class="volcano"></span> Volcano</div>
+      <div><span class="wildfire"></span> Wildfire</div>
     </div>
+  </div>
+  <!-- Real-Time Alerts -->
+  <div class="scroll-container">
+    <% disasters.forEach(disaster => { %>
+      <div class="alert">
+        <h3><a href="<%= disaster.link %>"><%= disaster.title %></a></h3>
+        <p><%= disaster.summary %></p>
+        <p>
+          <small>
+            Location: <%= disaster.location ? disaster.location : 'Unknown' %> |
+            Date: <%= disaster.eventDate ? disaster.eventDate.toUTCString() : 'Unknown' %>
+          </small>
+        </p>
+      </div>
+    <% }) %>
+  </div>
+</div>
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -72,21 +90,5 @@
     </script>
   <br><br><br> <!-- Include the navbar partial -->
   <!-- 🔥 Real-Time Alerts -->
-<div class="scroll-container">
-    <% disasters.forEach(disaster => { %>
-      <div class="alert">
-        <h3><a href="<%= disaster.link %>"><%= disaster.title %></a></h3>
-        <p><%= disaster.summary %></p>
-        <p>
-          <small>
-            Location: <%= disaster.location && disaster.location? disaster.location : 'Unknown' %> |
-            Date: <%= disaster.eventDate ? disaster.eventDate.toUTCString() : 'Unknown' %>
-          </small>
-          
-          
-        </p>
-      </div>
-    <% }) %>
-  </div>
-</div>
+
  

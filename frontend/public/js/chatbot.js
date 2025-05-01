@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 // Load training data
 async function loadTrainingData() {
   try {
-    const response = await fetch("../../../backend/data/training-data.json");
+    const response = await fetch("/data/training-data.json");
     if (!response.ok) throw new Error("Failed to fetch training data");
     return await response.json();
   } catch (error) {
@@ -13,21 +13,19 @@ async function loadTrainingData() {
 }
 
 // Initialize AI model
-const API_KEY = GEMINI_API_KEY
+const API_KEY = window.GEMINI_API_KEY; // Make sure to inject this variable securely
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
 let messages = { history: [] };
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM loaded.");
-
   // Select elements
-  const typingIndicator = document.querySelector(".typing-indicator");
   const chatWindow = document.querySelector(".chat-window");
   const sendButton = document.querySelector(".input-area button");
   const userInput = document.querySelector(".input-area input");
-  const chatArea = document.querySelector(".chat-window .chat");
+  const chatArea = document.querySelector(".chat");
+  const typingIndicator = document.querySelector(".typing-indicator");
   const closeButton = document.querySelector(".close");
 
   if (!chatWindow || !sendButton || !userInput || !chatArea) {
@@ -35,11 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // Drag Chat Window
-  let isDragging = false,
-    offsetX,
-    offsetY;
-
+  // Drag Chat Window (optional)
+  let isDragging = false, offsetX, offsetY;
   chatWindow.addEventListener("mousedown", (e) => {
     if (e.target.closest(".input-area")) return;
     isDragging = true;
@@ -47,13 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
     offsetY = e.clientY - chatWindow.offsetTop;
     chatWindow.style.position = "absolute";
   });
-
   document.addEventListener("mousemove", (e) => {
     if (!isDragging) return;
     chatWindow.style.left = `${e.clientX - offsetX}px`;
     chatWindow.style.top = `${e.clientY - offsetY}px`;
   });
-
   document.addEventListener("mouseup", () => (isDragging = false));
 
   // Close Chat Window
@@ -63,21 +56,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Function to send message
+  // Send message function
   async function sendMessage() {
     const userMessage = userInput.value.trim();
     if (!userMessage) return;
 
-    console.log("Send button clicked!");
-
-    // Clear input field
     userInput.value = "";
 
-    // Add user message with avatar
+    // Add user message
     chatArea.insertAdjacentHTML(
       "beforeend",
-      `<div class="user">
-        <p>${userMessage}</p>
+      `<div class="user flex justify-end mb-2">
+        <p class="bg-orange-100 text-gray-800 p-2 rounded-xl max-w-[75%]">${userMessage}</p>
       </div>`
     );
 
@@ -91,25 +81,22 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!aiResponse) {
         const chat = model.startChat({ history: messages.history });
         const result = await chat.sendMessage(userMessage);
-        aiResponse =
-          result.response?.text() || "I'm sorry, I couldn't understand that.";
+        aiResponse = result.response?.text() || "I'm sorry, I couldn't understand that.";
       }
 
-      // Hide typing indicator
       if (typingIndicator) typingIndicator.style.display = "none";
 
-      // Add AI response with avatar
+      // Add AI response
       chatArea.insertAdjacentHTML(
         "beforeend",
-        `<div class="model">
-          <p>${aiResponse}</p>
+        `<div class="model flex justify-start mb-2">
+          <p class="bg-orange-200 text-gray-800 p-2 rounded-xl max-w-[75%]">${aiResponse}</p>
         </div>`
       );
 
       messages.history.push({ role: "user", parts: [{ text: userMessage }] });
       messages.history.push({ role: "model", parts: [{ text: aiResponse }] });
 
-      // Auto-scroll to latest message
       chatArea.scrollTop = chatArea.scrollHeight;
     } catch (error) {
       console.error("Chat API Error:", error);
@@ -121,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Attach event listeners for sending messages
   sendButton.addEventListener("click", sendMessage);
   userInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") sendMessage();
@@ -136,4 +122,3 @@ function findTrainingResponse(userMessage, trainingData) {
     )?.output || null
   );
 }
-

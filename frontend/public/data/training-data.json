@@ -1,0 +1,1083 @@
+[
+    {
+        "input": "What is Newton's First Law?",
+        "output": "Newton's First Law states that an object at rest stays at rest, and an object in motion stays in motion unless acted upon by an external force."
+    },
+    {
+        "input": "Explain the Pythagorean theorem.",
+        "output": "The Pythagorean theorem states that in a right triangle, the square of the hypotenuse is equal to the sum of the squares of the other two sides: a² + b² = c²."
+    },
+    {
+      "input": "Who are you?",
+      "output": "I am an AI-powered mental health chatbot created by Moumita,Sahid(The Legend),Aryan and Bhairab.I'm here to help you"
+    },
+    {
+      "input": "What should I do during an earthquake?",
+      "output": "Drop to the ground, take cover under sturdy furniture, and hold on until the shaking stops. Stay away from windows and heavy objects."
+    },
+    {
+      "input": "How can I help someone injured in a disaster?",
+      "output": "Call emergency services immediately. Provide first aid if trained: stop bleeding, keep them warm, and avoid moving them unless necessary."
+    },
+    {
+      "input": "What items should I include in an emergency kit?",
+      "output": "Include water, non-perishable food, flashlight, batteries, first aid supplies, medications, important documents, cash, and a whistle."
+    },
+    {
+      "input": "How do I prepare for a flood?",
+      "output": "Know your evacuation routes, move valuables to higher ground, keep emergency supplies ready, and follow instructions from local authorities."
+    },
+    {
+      "input": "What should I do if there is a fire in my home?",
+      "output": "Evacuate immediately using your escape plan, call the fire department, and stay low to avoid smoke inhalation."
+    },
+    {
+      "input": "How can I help my neighbors during a disaster?",
+      "output": "Check on elderly or disabled neighbors, share supplies if possible, and help with evacuation if needed."
+    },
+    {
+      "input": "What should I do during a hurricane warning?",
+      "output": "Secure your home, bring inside outdoor furniture, have your emergency kit ready, and evacuate if ordered."
+    },
+    {
+      "input": "How do I stay informed during a disaster?",
+      "output": "Listen to local news, use a battery-powered radio, and follow official social media channels for updates."
+    },
+    {
+      "input": "What is the best way to prepare for a power outage?",
+      "output": "Keep flashlights and batteries handy, stock up on non-perishable food and water, and charge your devices in advance."
+    },
+    {
+      "input": "How do I make a family emergency plan?",
+      "output": "Decide on meeting places, share emergency contacts, and practice your plan regularly with all family members."
+    },
+    {
+      "input": "What should I do during a tornado?",
+      "output": "Go to a basement or an interior room without windows on the lowest floor, protect your head, and wait for the all-clear."
+    },
+    {
+      "input": "How can I help children cope after a disaster?",
+      "output": "Reassure them, maintain routines, encourage them to talk about their feelings, and provide comfort."
+    },
+    {
+      "input": "What should I do if I am trapped after a disaster?",
+      "output": "Try to signal for help by tapping or shouting, cover your mouth to avoid dust, and stay calm."
+    },
+    {
+      "input": "How do I prepare my pets for a disaster?",
+      "output": "Include food, water, medications, and carriers in your emergency kit. Make sure pets have ID tags."
+    },
+    {
+      "input": "What should I do during a heatwave?",
+      "output": "Stay hydrated, avoid strenuous activity, stay in cool places, and check on vulnerable people."
+    },
+    {
+      "input": "How do I prepare for a winter storm?",
+      "output": "Stock up on food, water, warm clothing, and blankets. Avoid travel and keep emergency supplies handy."
+    },
+    {
+      "input": "What is the first step after a disaster?",
+      "output": "Check yourself and others for injuries, provide first aid if needed, and listen for official instructions."
+    },
+    {
+      "input": "How can I volunteer after a disaster?",
+      "output": "Contact local relief organizations like the Red Cross to find safe ways to help."
+    },
+    {
+      "input": "What should I do during a landslide?",
+      "output": "Move away from the path quickly, seek higher ground, and listen for unusual sounds indicating moving debris."
+    },
+    {
+      "input": "How do I clean up safely after a flood?",
+      "output": "Wear protective gear, avoid floodwaters, disinfect surfaces, and watch for hazards like gas leaks."
+    },
+    {
+      "input": "What are the signs of heat exhaustion?",
+      "output": "Symptoms include heavy sweating, weakness, cold or pale skin, nausea, and fainting. Move to a cool place and hydrate."
+    },
+    {
+      "input": "How do I treat minor burns?",
+      "output": "Cool the burn under running water for 10-20 minutes, cover with a sterile dressing, and avoid applying creams or ice."
+    },
+    {
+      "input": "What should I do if someone is having a panic attack during a disaster?",
+      "output": "Stay calm, speak gently, encourage slow breathing, and help them focus on their surroundings."
+    },
+    {
+      "input": "How can I prepare my home for wildfires?",
+      "output": "Clear flammable vegetation, keep gutters clean, use fire-resistant materials, and have an evacuation plan."
+    },
+    {
+      "input": "What is the safest place to be during a tsunami?",
+      "output": "Move to higher ground and stay away from the coast until officials declare it safe."
+    },
+    {
+      "input": "How do I disinfect water in an emergency?",
+      "output": "Boil water for at least one minute or use water purification tablets as directed."
+    },
+    {
+      "input": "What should I do if I smell gas after a disaster?",
+      "output": "Leave the area immediately, avoid using electrical devices, and call emergency services."
+    },
+    {
+      "input": "How can I find shelter during a disaster?",
+      "output": "Listen to local authorities for shelter locations or contact the Red Cross for assistance."
+    },
+    {
+      "input": "What should I do if I get separated from my family?",
+      "output": "Go to your designated meeting place or contact your family using your emergency plan."
+    },
+    {
+      "input": "How do I help someone with mobility issues during evacuation?",
+      "output": "Assist them calmly, use mobility aids if available, and never leave them behind."
+    },
+    {
+      "input": "What are the symptoms of hypothermia?",
+      "output": "Shivering, slurred speech, confusion, and drowsiness. Move the person to warmth and seek medical help."
+    },
+    {
+      "input": "How do I prepare for a chemical spill?",
+      "output": "Evacuate the area, avoid contact with chemicals, and follow instructions from emergency personnel."
+    },
+    {
+      "input": "What should I do during a nuclear emergency?",
+      "output": "Go indoors, close all windows and doors, turn off ventilation, and listen for official instructions."
+    },
+    {
+      "input": "How do I cope with anxiety after a disaster?",
+      "output": "Talk to someone you trust, practice deep breathing, and seek professional help if needed."
+    },
+    {
+      "input": "What should I do if there is a snake bite during a disaster?",
+      "output": "Keep the victim calm, immobilize the bitten area, and seek medical help immediately. Do not suck out the venom."
+    },
+    {
+      "input": "How do I treat a sprained ankle?",
+      "output": "Rest, ice, compress, and elevate the ankle. Seek medical help if severe pain or swelling occurs."
+    },
+    {
+      "input": "What is the purpose of a go-bag?",
+      "output": "A go-bag contains essential items for quick evacuation, such as food, water, clothing, and important documents."
+    },
+    {
+      "input": "How do I help someone who is unconscious?",
+      "output": "Check for breathing, call emergency services, and perform CPR if trained."
+    },
+    {
+      "input": "What should I do if I lose power during a disaster?",
+      "output": "Use flashlights, conserve phone battery, keep refrigerator closed, and listen to a battery-powered radio for updates."
+    },
+    {
+      "input": "How do I avoid food poisoning during a disaster?",
+      "output": "Eat only non-perishable or properly cooked foods, avoid foods that have been in contact with floodwaters."
+    },
+    {
+      "input": "What should I do if my phone battery is low during an emergency?",
+      "output": "Turn on battery saver mode, close unnecessary apps, and use your phone only for essential communication."
+    },
+    {
+      "input": "How can I help people with mental health needs during a disaster?",
+      "output": "Offer a listening ear, encourage seeking professional help, and support them in maintaining routines."
+    },
+    {
+      "input": "What should I do during a sandstorm?",
+      "output": "Stay indoors, close windows and doors, and cover your nose and mouth with a cloth if you must go outside."
+    },
+    {
+      "input": "How do I prepare for a pandemic?",
+      "output": "Stock up on essentials, practice good hygiene, follow public health guidelines, and stay informed."
+    },
+    {
+      "input": "What is the best way to store important documents for emergencies?",
+      "output": "Keep copies in a waterproof bag in your emergency kit and store digital backups online."
+    },
+    {
+      "input": "How do I help someone experiencing shock?",
+      "output": "Lay them down, keep them warm, elevate their legs if possible, and seek medical attention."
+    },
+    {
+      "input": "What should I do during a blizzard?",
+      "output": "Stay indoors, keep warm, avoid travel, and listen to weather updates."
+    },
+    {
+      "input": "How can I help someone with hearing loss during a disaster?",
+      "output": "Communicate using written notes or gestures, and ensure they receive emergency information."
+    },
+    {
+      "input": "What should I do if I see downed power lines?",
+      "output": "Stay far away, warn others, and report them to authorities immediately."
+    },
+    {
+      "input": "How do I purify water with household bleach?",
+      "output": "Add 8 drops of unscented bleach per gallon of water, mix well, and let it stand for 30 minutes before drinking."
+    },
+    {
+      "input": "What should I do if someone is bleeding heavily?",
+      "output": "Apply firm pressure with a clean cloth, keep the wound elevated, and seek medical help."
+    },
+    {
+      "input": "How do I prevent mold after a flood?",
+      "output": "Dry out affected areas quickly, use fans and dehumidifiers, and clean with disinfectant."
+    },
+    {
+      "input": "What is the safest way to evacuate during a wildfire?",
+      "output": "Leave early, follow marked evacuation routes, and avoid shortcuts through fire-prone areas."
+    },
+    {
+      "input": "How do I help someone with asthma during a disaster?",
+      "output": "Ensure they have access to their inhaler, keep them away from smoke or dust, and seek medical help if needed."
+    },
+    {
+      "input": "What should I do if my car is stuck in floodwaters?",
+      "output": "Abandon the car and move to higher ground if it is safe to do so. Do not attempt to drive through floodwaters."
+    },
+    {
+      "input": "How do I prevent hypothermia in cold weather?",
+      "output": "Wear layers, keep dry, cover your head and hands, and stay active to generate body heat."
+    },
+    {
+      "input": "What should I do if I hear a tsunami warning siren?",
+      "output": "Move to higher ground immediately and stay there until authorities declare it safe."
+    },
+    {
+      "input": "How do I help someone with diabetes during a disaster?",
+      "output": "Ensure they have access to their medications and snacks, and help monitor their blood sugar levels."
+    },
+    {
+      "input": "What should I do if I find someone unconscious after a disaster?",
+      "output": "Check for breathing, call for help, and begin CPR if trained."
+    },
+    {
+      "input": "How do I avoid dehydration during a heatwave?",
+      "output": "Drink plenty of water, avoid alcohol and caffeine, and stay in cool, shaded areas."
+    },
+    {
+      "input": "What should I do if I am caught outside during a tornado?",
+      "output": "Lie flat in a low-lying area, cover your head, and stay away from trees and vehicles."
+    },
+    {
+      "input": "How can I help someone who is grieving after a disaster?",
+      "output": "Listen with empathy, offer support, and encourage them to seek counseling if needed."
+    },
+    {
+      "input": "What should I do if I am exposed to hazardous chemicals?",
+      "output": "Remove contaminated clothing, rinse skin with water, and seek medical attention immediately."
+    },
+    {
+      "input": "How do I prepare for a volcanic eruption?",
+      "output": "Have an emergency kit ready, know evacuation routes, and keep masks to protect from ash."
+    },
+    {
+      "input": "What is the best way to communicate during a disaster?",
+      "output": "Use text messages or social media, as phone lines may be overloaded. Keep messages brief."
+    },
+    {
+      "input": "How do I help someone with limited English during a disaster?",
+      "output": "Use simple language, gestures, or translation apps to communicate important information."
+    },
+    {
+      "input": "What should I do if I am caught in a building collapse?",
+      "output": "Protect your head, avoid unnecessary movement, and try to signal rescuers by tapping or using a whistle."
+    },
+    {
+      "input": "How do I care for infants during a disaster?",
+      "output": "Keep extra formula, diapers, and baby supplies in your emergency kit. Maintain feeding and sleeping routines if possible."
+    },
+    {
+      "input": "What should I do if I am separated from my pet during a disaster?",
+      "output": "Contact local animal shelters and provide them with your pet’s description and your contact information."
+    },
+    {
+      "input": "How do I handle spoiled food after a power outage?",
+      "output": "When in doubt, throw it out. Discard perishable foods that have been above 40°F (4°C) for more than two hours."
+    },
+    {
+      "input": "What should I do if someone is having a seizure?",
+      "output": "Protect them from injury, do not restrain them, and place them on their side after the seizure ends. Seek medical help if needed."
+    },
+    {
+      "input": "How do I prepare for an evacuation?",
+      "output": "Pack a go-bag, plan your route, secure your home, and inform family or friends of your plans."
+    },
+    {
+      "input": "What should I do if I am caught in a stampede?",
+      "output": "Stay on your feet, move with the crowd, protect your head and chest, and avoid obstacles."
+    },
+    {
+      "input": "How do I help someone with allergies during a disaster?",
+      "output": "Ensure they have access to their medications, avoid known allergens, and seek medical help if they have a severe reaction."
+    },
+    {
+      "input": "What should I do if I am stranded in my car during a snowstorm?",
+      "output": "Stay inside, run the engine occasionally for warmth, keep a window cracked, and display a distress signal."
+    },
+    {
+      "input": "How do I prepare for a drought?",
+      "output": "Conserve water, store extra water supplies, and follow local water use restrictions."
+    },
+    {
+      "input": "What should I do if I am bitten by an animal during a disaster?",
+      "output": "Clean the wound with soap and water, apply a clean dressing, and seek medical attention."
+    },
+    {
+      "input": "How do I help someone with a broken bone?",
+      "output": "Immobilize the area, apply a splint if trained, and seek medical help."
+    },
+    {
+      "input": "What should I do if I am caught in a riot or civil unrest?",
+      "output": "Avoid the area, stay indoors, and follow instructions from authorities."
+    },
+    {
+      "input": "How do I prepare for a blackout?",
+      "output": "Have flashlights, batteries, and a battery-powered radio ready. Charge devices and keep refrigerator doors closed."
+    },
+    {
+      "input": "What should I do if I am exposed to extreme cold?",
+      "output": "Wear warm layers, cover exposed skin, and seek shelter as soon as possible."
+    },
+    {
+      "input": "How do I help someone with a head injury?",
+      "output": "Keep them still, apply a cold pack to reduce swelling, and seek medical attention."
+    },
+    {
+      "input": "What should I do if I am caught in a flash flood?",
+      "output": "Move to higher ground immediately, avoid walking or driving through floodwaters."
+    },
+    {
+      "input": "How do I prepare for a dust storm?",
+      "output": "Stay indoors, close windows and doors, and use masks or cloths to cover your nose and mouth."
+    },
+    {
+      "input": "What should I do if I am exposed to radiation?",
+      "output": "Get indoors, remove contaminated clothing, shower thoroughly, and listen for official instructions."
+    },
+    {
+      "input": "How do I help someone with a spinal injury?",
+      "output": "Do not move them unless necessary, keep them still, and call emergency services."
+    },
+    {
+      "input": "What should I do if I am caught in a hailstorm?",
+      "output": "Seek shelter indoors or in a sturdy building. Protect your head if caught outside."
+    },
+    {
+      "input": "How do I prepare for a tsunami?",
+      "output": "Know evacuation routes, have an emergency kit ready, and move to higher ground if you feel an earthquake or hear a warning."
+    },
+    {
+      "input": "What should I do if I am exposed to tear gas?",
+      "output": "Leave the area, rinse eyes and skin with water, and remove contaminated clothing."
+    },
+    {
+      "input": "How do I help someone with a heart attack?",
+      "output": "Call emergency services, have them rest, and give aspirin if not allergic. Begin CPR if they stop breathing."
+    },
+    {
+      "input": "What should I do if I am caught in a building fire?",
+      "output": "Stay low to avoid smoke, use the stairs, and never use elevators. Exit the building quickly and safely."
+    },
+    {
+      "input": "How do I prepare for a nuclear power plant emergency?",
+      "output": "Know evacuation routes, have an emergency kit, and follow instructions from authorities."
+    },
+    {
+      "input": "What should I do if I am exposed to carbon monoxide?",
+      "output": "Leave the area immediately, get fresh air, and seek medical attention."
+    },
+    {
+      "input": "How do I help someone with a burn injury?",
+      "output": "Cool the burn with water, cover with a sterile dressing, and seek medical help if severe."
+    },
+    {
+      "input": "What should I do if I am caught in a mudslide?",
+      "output": "Move to higher ground, avoid river valleys, and listen for evacuation orders."
+    },
+    {
+      "input": "How do I prepare for a cyberattack affecting emergency services?",
+      "output": "Have backup communication methods, keep emergency contacts written down, and stay informed through multiple sources."
+    },
+    {
+      "input": "What should I do if I am exposed to asbestos during cleanup?",
+      "output": "Stop work, leave the area, and contact professionals for safe removal."
+    },
+    {
+      "input": "How do I help someone with a severe allergic reaction?",
+      "output": "Use an epinephrine auto-injector if available, call emergency services, and keep them lying down."
+    },
+    {
+      "input": "What should I do if I am caught in a crowd crush?",
+      "output": "Keep your arms up to protect your chest, move with the crowd, and avoid obstacles."
+    },
+    {
+      "input": "How do I prepare for a meteorological drought?",
+      "output": "Conserve water, use drought-resistant plants, and follow local water restrictions."
+    },
+    {
+      "input": "What should I do if I am exposed to lead during cleanup?",
+      "output": "Wash hands thoroughly, avoid eating or drinking in contaminated areas, and seek medical advice."
+    },
+    {
+      "input": "How do I help someone with a mental health crisis?",
+      "output": "Stay calm, listen without judgment, and encourage them to seek professional help."
+    },
+    {
+      "input": "What should I do if I am caught in a blizzard while hiking?",
+      "output": "Seek shelter, stay dry, conserve body heat, and signal for help if possible."
+    },
+    {
+      "input": "How do I prepare for a geomagnetic storm?",
+      "output": "Have backup power sources, keep electronics unplugged, and stay informed through official channels."
+    },
+    {
+      "input": "What should I do if I am exposed to mold after a flood?",
+      "output": "Wear protective gear, clean with disinfectant, and ventilate the area."
+    },
+    {
+      "input": "How do I help someone with a stroke?",
+      "output": "Call emergency services immediately, note the time of symptoms, and keep them comfortable."
+    },
+    {
+      "input": "What should I do if I am caught in a riot?",
+      "output": "Stay calm, avoid confrontation, and leave the area as quickly and safely as possible."
+    },
+    {
+      "input": "How do I prepare for a mass evacuation?",
+      "output": "Have a go-bag ready, plan multiple routes, and stay informed about evacuation orders."
+    },
+    {
+      "input": "What should I do if I am exposed to hazardous waste?",
+      "output": "Avoid contact, leave the area, and report to authorities."
+    },
+    {
+      "input": "How do I help someone with a heat stroke?",
+      "output": "Move them to a cool place, cool their body with wet cloths, and seek medical help immediately."
+    },
+    {
+      "input": "What should I do if I am caught in a flash fire?",
+      "output": "Stop, drop, and roll to extinguish flames, and seek medical attention for burns."
+    },
+    {
+      "input": "How do I prepare for an avalanche?",
+      "output": "Check avalanche forecasts, carry safety equipment, and avoid risky areas."
+    },
+    {
+      "input": "What should I do if I am exposed to pesticides during a disaster?",
+      "output": "Leave the area, wash exposed skin thoroughly, and seek medical advice."
+    },
+    {
+      "input": "How do I help someone with a concussion?",
+      "output": "Keep them awake and alert, monitor for worsening symptoms, and seek medical attention."
+    },
+    {
+      "input": "What should I do if I am caught in a building collapse?",
+      "output": "Protect your head, avoid unnecessary movement, and try to signal rescuers by tapping or using a whistle."
+    },
+    {
+      "input": "How do I prepare for a pandemic flu?",
+      "output": "Get vaccinated, practice good hygiene, and follow public health recommendations."
+    },
+    {
+      "input": "What should I do if I am exposed to sewage during a flood?",
+      "output": "Avoid contact, wash thoroughly with soap and water, and disinfect any contaminated items."
+    },
+    {
+      "input": "How do I help someone with a dislocated joint?",
+      "output": "Immobilize the joint, apply ice, and seek medical help. Do not try to relocate the joint yourself."
+    },
+    {
+      "input": "What should I do if I am caught in a lightning storm?",
+      "output": "Seek shelter indoors or in a car, avoid open fields and tall objects, and wait until the storm passes."
+    },
+    {
+      "input": "How do I prepare for a severe thunderstorm?",
+      "output": "Secure outdoor items, stay indoors, and avoid using electrical appliances."
+    },
+    {
+      "input": "What should I do if I am exposed to animal bites during a disaster?",
+      "output": "Clean the wound, apply a clean dressing, and seek medical attention for possible rabies exposure."
+    },
+    {
+      "input": "How do I help someone with a nosebleed?",
+      "output": "Have them sit upright, lean forward, and pinch the nostrils for 10 minutes. Seek medical help if bleeding continues."
+    },
+    {
+      "input": "What should I do if I am caught in a dust storm while driving?",
+      "output": "Pull over, turn off lights, keep your foot off the brake, and wait for visibility to improve."
+    },
+    {
+      "input": "How do I prepare for a water shortage?",
+      "output": "Store extra water, fix leaks, and practice water conservation."
+    },
+    {
+      "input": "What should I do if I am exposed to toxic fumes?",
+      "output": "Leave the area, get fresh air, and seek medical attention if you feel unwell."
+    },
+    {
+      "input": "How do I help someone with a broken arm?",
+      "output": "Immobilize the arm, apply a splint if trained, and seek medical help."
+    },
+    {
+      "input": "What should I do if I am caught in a fire in a high-rise building?",
+      "output": "Use the stairs, avoid elevators, stay low to avoid smoke, and signal for help if trapped."
+    },
+    {
+      "input": "How do I prepare for a fuel shortage?",
+      "output": "Keep your vehicle fueled, carpool when possible, and minimize unnecessary travel."
+    },
+    {
+      "input": "What should I do if I am exposed to extreme heat?",
+      "output": "Stay hydrated, avoid strenuous activity, and seek shade or air conditioning."
+    },
+    {
+      "input": "How do I help someone with frostbite?",
+      "output": "Move them to a warm place, warm the affected area gently, and seek medical attention."
+    },
+    {
+      "input": "What should I do if I am caught in a stampede at a public event?",
+      "output": "Move with the crowd, protect your head and chest, and avoid obstacles."
+    },
+    {
+      "input": "How do I prepare for a landslide-prone area?",
+      "output": "Avoid building on steep slopes, plant ground cover, and listen for warnings during heavy rain."
+    },
+    {
+      "input": "What should I do if I am exposed to contaminated water?",
+      "output": "Avoid drinking or bathing in it, use bottled or boiled water, and report to authorities."
+    },
+    {
+      "input": "How do I help someone with a spinal injury?",
+      "output": "Do not move them unless necessary, keep them still, and call emergency services."
+    },
+    {
+      "input": "What should I do if I am caught in a sandstorm while driving?",
+      "output": "Pull over, turn off lights, and wait for the storm to pass."
+    },
+    {
+      "input": "How do I prepare for a wildfire evacuation?",
+      "output": "Have a go-bag ready, plan your route, and leave as soon as evacuation orders are given."
+    },
+    {
+      "input": "What should I do if I am exposed to hazardous dust?",
+      "output": "Wear a mask, avoid breathing dust, and leave the area if possible."
+    },
+    {
+      "input": "How do I help someone with a diabetic emergency?",
+      "output": "Give them a sugary drink or snack if conscious, and seek medical help if they do not improve."
+    },
+    {
+      "input": "What should I do if I am caught in a chemical spill?",
+      "output": "Evacuate the area, avoid contact with chemicals, and follow instructions from emergency personnel."
+    },
+    {
+      "input": "How do I prepare for an emergency if I have a disability?",
+      "output": "Create a personal support network, keep extra supplies, and inform emergency services of your needs."
+    },
+    {
+      "input": "What should I do if I am exposed to sewage during a disaster?",
+      "output": "Avoid contact, wash thoroughly with soap and water, and disinfect any contaminated items."
+    },
+    {
+      "input": "How do I help someone with a severe burn?",
+      "output": "Cover the burn with a clean cloth, do not apply ointments, and seek immediate medical help."
+    },
+    {
+      "input": "What should I do if I am caught in a sudden flood?",
+      "output": "Move to higher ground immediately, avoid walking or driving through floodwaters."
+    },
+    {
+      "input": "How do I prepare for a hurricane?",
+      "output": "Secure your home, have an emergency kit, and know your evacuation routes."
+    },
+    {
+      "input": "What should I do if I am exposed to hazardous smoke?",
+      "output": "Stay indoors, close windows and doors, and use an N95 mask if you must go outside."
+    },
+    {
+      "input": "How do I help someone with a broken leg?",
+      "output": "Immobilize the leg, apply a splint if trained, and seek medical help."
+    },
+    {
+      "input": "What should I do if I am caught in a snowstorm while driving?",
+      "output": "Pull over, stay in the car, run the engine occasionally for warmth, and signal for help."
+    },
+    {
+      "input": "How do I prepare for a tsunami evacuation?",
+      "output": "Know evacuation routes, have a go-bag ready, and move to higher ground if you feel an earthquake or hear a warning."
+    },
+    {
+      "input": "What should I do if I am exposed to hazardous chemicals?",
+      "output": "Remove contaminated clothing, rinse skin with water, and seek medical attention immediately."
+    },
+    {
+      "input": "How do I help someone with a heat-related illness?",
+      "output": "Move them to a cool place, cool their body with wet cloths, and seek medical help if symptoms are severe."
+    },
+    {
+      "input": "What should I do if I am caught in a volcanic eruption?",
+      "output": "Evacuate if ordered, wear masks to protect from ash, and stay indoors if evacuation is not possible."
+    },
+    {
+      "input": "How do I prepare for a nuclear emergency?",
+      "output": "Go indoors, close windows and doors, turn off ventilation, and listen for official instructions."
+    },
+    {
+      "input": "What should I do if I am exposed to hazardous materials?",
+      "output": "Leave the area, avoid contact, and report to authorities."
+    },
+    {
+      "input": "How do I help someone with a heart attack?",
+      "output": "Call emergency services, have them rest, and give aspirin if not allergic. Begin CPR if they stop breathing."
+    },
+    {
+      "input": "What should I do if I am caught in a storm surge?",
+      "output": "Move to higher ground immediately and stay away from the coast."
+    },
+    {
+      "input": "How do I prepare for a severe weather warning?",
+      "output": "Secure outdoor items, stay indoors, and listen to weather updates."
+    },
+    {
+      "input": "What should I do if I am exposed to hazardous gases?",
+      "output": "Leave the area, get fresh air, and seek medical attention if you feel unwell."
+    },
+    {
+      "input": "How do I help someone with a broken finger?",
+      "output": "Immobilize the finger, apply ice, and seek medical help."
+    },
+    {
+      "input": "What should I do if I am caught in a flash flood while driving?",
+      "output": "Abandon the car and move to higher ground if it is safe to do so. Do not attempt to drive through floodwaters."
+    },
+    {
+      "input": "How do I prepare for a pandemic?",
+      "output": "Stock up on essentials, practice good hygiene, follow public health guidelines, and stay informed."
+    },
+    {
+      "input": "What should I do if I am exposed to hazardous dust?",
+      "output": "Wear a mask, avoid breathing dust, and leave the area if possible."
+    },
+    {
+      "input": "How do I help someone with a diabetic emergency?",
+      "output": "Give them a sugary drink or snack if conscious, and seek medical help if they do not improve."
+    },
+    {
+      "input": "What should I do if I am caught in a chemical spill?",
+      "output": "Evacuate the area, avoid contact with chemicals, and follow instructions from emergency personnel."
+    },
+    {
+      "input": "How do I prepare for an emergency if I have a disability?",
+      "output": "Create a personal support network, keep extra supplies, and inform emergency services of your needs."
+    },
+    {
+      "input": "What should I do if I am exposed to sewage during a disaster?",
+      "output": "Avoid contact, wash thoroughly with soap and water, and disinfect any contaminated items."
+    },
+    {
+      "input": "How do I help someone with a severe burn?",
+      "output": "Cover the burn with a clean cloth, do not apply ointments, and seek immediate medical help."
+    },
+    {
+      "input": "What should I do if I am caught in a sudden flood?",
+      "output": "Move to higher ground immediately, avoid walking or driving through floodwaters."
+    },
+    {
+      "input": "How do I prepare for a hurricane?",
+      "output": "Secure your home, have an emergency kit, and know your evacuation routes."
+    },
+    {
+      "input": "What are the top global crises to be aware of?",
+      "output": "Key crises include situations in Sudan, Syria, and Myanmar, driven by conflict and instability."
+      },
+      {
+      "input": "How can geopolitical tensions affect disaster preparedness?",
+      "output": "Geopolitical tensions can worsen inflation and disrupt supply chains, making resource acquisition more difficult."
+      },
+      {
+      "input": "What cybersecurity measures should businesses take in 2025?",
+      "output": "Businesses should invest in cybersecurity training, update firewalls, and use mass notification systems."
+      },
+      {
+      "input": "How much are ransomware damages expected to cost businesses by 2031?",
+      "output": "Ransomware damages are projected to cost businesses $265 billion annually by 2031."
+      },
+      {
+      "input": "What is the hottest year on record?",
+      "output": "2024"
+      },
+      {
+      "input": "How do I develop a comprehensive emergency plan for climate change?",
+      "output": "Integrate advanced alerting tools and geo-targeted notifications to protect employees and minimize disruptions."
+      },
+      {
+      "input": "What should educational and corporate settings do to respond to mass shootings?",
+      "output": "Use mass notification systems to implement real-time alerts, lockdown protocols, and clear communication."
+      },
+      {
+      "input": "What is the best strategy for remote work cybersecurity?",
+      "output": "Equip remote teams with secure communication tools and training on identifying threats."
+      },
+      {
+      "input": "What should I include in an emergency bag?",
+      "output": "Gather drinking water, non-perishable food, a battery-operated torch, extra batteries, a first aid box, and essential medicines in a waterproof bag."
+      },
+      {
+      "input": "What should I do during a flash flood?",
+      "output": "Move to higher ground immediately, avoid walking or driving through floodwaters."
+      },
+      {
+      "input": "How do I prepare for a heatwave?",
+      "output": "Stay hydrated, avoid strenuous activity, stay in cool places, and check on vulnerable people."
+      },
+      {
+      "input": "What should I do during a winter storm?",
+      "output": "Stock up on food, water, warm clothing, and blankets. Avoid travel and keep emergency supplies handy."
+      },
+      {
+      "input": "What is the first step after a disaster strikes?",
+      "output": "Check yourself and others for injuries, provide first aid if needed, and listen for emergency instructions from authorities."
+      },
+      {
+      "input": "What should I do during a landslide?",
+      "output": "Move away from the path of the slide as quickly as possible, and seek higher ground. Listen for unusual sounds that may indicate moving debris."
+      },
+      {
+      "input": "How do I clean up safely after a flood?",
+      "output": "Wear protective clothing, avoid contact with floodwater, and disinfect surfaces. Watch out for structural damage and hazards like gas leaks."
+      },
+      {
+      "input": "What do I need in a basic disaster kit?",
+      "output": "A supply of non-perishable food, a non-electric can opener, a change of clothing, rain gear, sturdy shoes, blankets, a first aid kit, and prescription medications."
+      },
+      {
+      "input": "What should I ask my workplace about emergency plans?",
+      "output": "Ask about emergency plans, how to prepare for each disaster, and how you would be warned of an emergency."
+      },
+      {
+      "input": "How do I prepare for different types of disasters?",
+      "output": "Find out which disasters could occur in your area and how to prepare for each one."
+      },
+      {
+      "input": "What should I do in case of a storm surge?",
+      "output": "Consider using virtual reality simulations to understand the effects of storm surges and communicate its devastating consequences."
+      },
+      {
+      "input": "What should cities do to reduce climate impacts?",
+      "output": "Cities should address social vulnerability and adapt infrastructure to handle both droughts and floods."
+      },
+      {
+      "input": "What kind of tools can cities use for disaster preparedness?",
+      "output": "Cities can use science-based data systems to facilitate quick, informed decision-making during disaster events."
+      },
+      {
+      "input": "How are countries collaborating on disaster resilience?",
+      "output": "Countries are investing in research and technology partnerships to enhance the ability to prepare for and respond to natural disasters."
+      },
+      {
+      "input": "What should I do if there is a water shortage?",
+      "output": "Conserve water, store extra water supplies, and follow local water use restrictions."
+      },
+      {
+      "input": "What should I do if I am exposed to toxic fumes?",
+      "output": "Leave the area, get fresh air, and seek medical attention if you feel unwell."
+      },
+      {
+      "input": "What should I do if I am caught in a riot?",
+      "output": "Stay calm, avoid confrontation, and leave the area as quickly and safely as possible."
+      },
+      {
+      "input": "How do I prepare for a mass evacuation?",
+      "output": "Have a go-bag ready, plan multiple routes, and stay informed about evacuation orders."
+      },
+      {
+      "input": "What should I do if there is an earthquake while I’m driving?",
+      "output": "Pull over to a safe location, avoid bridges and overpasses, and stay inside your vehicle until the shaking stops."
+      },
+      {
+      "input": "What should I do if there is a tornado?",
+      "output": "Seek shelter in a basement, storm cellar, or interior room on the lowest floor, away from windows."
+      },
+      {
+      "input": "How do I prepare my home for a hurricane?",
+      "output": "Secure windows and doors, clear gutters and downspouts, and trim trees and shrubs."
+      },
+      {
+      "input": "What should I do if a flood is imminent?",
+      "output": "Turn off utilities, move to higher ground, and evacuate if ordered."
+      },
+      {
+      "input": "How can I prevent wildfires?",
+      "output": "Clear brush and vegetation around your home, properly dispose of cigarettes, and avoid outdoor burning during dry conditions."
+      },
+      {
+      "input": "What should I do during a tsunami?",
+      "output": "Move to higher ground as quickly as possible, stay away from the coast, and listen for official warnings."
+      },
+      {
+      "input": "How can I protect myself from extreme heat?",
+      "output": "Stay hydrated, wear loose-fitting clothing, and avoid strenuous activity during the hottest part of the day."
+      },
+      {
+      "input": "What should I do during a winter storm?",
+      "output": "Stay indoors, dress in layers, and conserve heat."
+      },
+      {
+      "input": "How can I prepare for a power outage?",
+      "output": "Have flashlights, batteries, and a backup power source readily available."
+      },
+      {
+      "input": "What should I do if there is a chemical spill?",
+      "output": "Evacuate the area, avoid contact with chemicals, and follow instructions from emergency personnel."
+      },
+      {
+      "input": "How can I protect myself from a pandemic?",
+      "output": "Wash your hands frequently, avoid touching your face, and practice social distancing."
+      },
+      {
+      "input": "What should I do if there is a terrorist attack?",
+      "output": "Run, hide, fight – evacuate if possible, find a safe place to hide, and defend yourself if necessary."
+      },
+      {
+      "input": "How can I prepare for a cyberattack?",
+      "output": "Use strong passwords, update software regularly, and be cautious of suspicious emails."
+      },
+      {
+      "input": "What should I do if there is a nuclear emergency?",
+      "output": "Go indoors, close all windows and doors, turn off ventilation, and listen for official instructions."
+      },
+      {
+      "input": "How can I prepare for a volcano eruption?",
+      "output": "Have an emergency kit ready, know evacuation routes, and keep masks to protect from ash."
+      },
+      {
+      "input": "What should I do if I am trapped in a collapsed building?",
+      "output": "Protect your head, avoid unnecessary movement, and try to signal rescuers by tapping or using a whistle."
+      },
+      {
+      "input": "How can I help others after a disaster?",
+      "output": "Donate to reputable organizations, volunteer your time, and offer support to those in need."
+      },
+      {
+      "input": "What are the signs of a heart attack?",
+      "output": "Chest pain, shortness of breath, and pain in the arm or jaw."
+      },
+      {
+      "input": "What should I do if someone is choking?",
+      "output": "Perform the Heimlich maneuver."
+      },
+      {
+      "input": "How do I treat a burn?",
+      "output": "Cool the burn with running water and cover with a sterile bandage."
+      },
+      {
+      "input": "What should I do if someone is having a seizure?",
+      "output": "Protect them from injury and do not put anything in their mouth."
+      },
+      {
+      "input": "How do I perform CPR?",
+      "output": "Chest compressions and rescue breaths."
+      },
+      {
+      "input": "How do I stop bleeding?",
+      "output": "Apply direct pressure to the wound."
+      },
+      {
+      "input": "How do I treat a sprain?",
+      "output": "Rest, ice, compression, and elevation (RICE)."
+      },
+      {
+      "input": "What should I do if someone is having a stroke?",
+      "output": "Call emergency services immediately and note the time symptoms started."
+      },
+      {
+      "input": "How do I treat a nosebleed?",
+      "output": "Pinch the nostrils and lean forward."
+      },
+      {
+      "input": "How do I remove a tick?",
+      "output": "Use tweezers to grasp the tick close to the skin and pull straight out."
+      },
+      {
+      "input": "How do I treat a bee sting?",
+      "output": "Remove the stinger and apply ice."
+      },
+      {
+      "input": "How do I identify poison ivy?",
+      "output": "Leaves of three, let it be."
+      },
+      {
+      "input": "How do I treat a jellyfish sting?",
+      "output": "Rinse with vinegar."
+      },
+      {
+      "input": "How do I treat a snake bite?",
+      "output": "Keep the victim calm and seek medical attention immediately."
+      },
+      {
+      "input": "What should I do if I suspect carbon monoxide poisoning?",
+      "output": "Get to fresh air immediately and call for help."
+      },
+      {
+      "input": "What is the emergency number to call?",
+      "output": "112"
+      },
+      {
+      "input": "What is the poison control center number?",
+      "output": "Call the poison control center or 112"
+      },
+      {
+      "input": "How do I find a local emergency shelter?",
+      "output": "Contact local authorities or the Red Cross."
+      },
+      {
+      "input": "How can I support local disaster relief efforts?",
+      "output": "Donate to reputable organizations and volunteer your time."
+      },
+      {
+      "input": "How do I build a support network in my community?",
+      "output": "Participate in community events and join local organizations."
+      },
+      {
+      "input": "How can I cope with the stress of a disaster?",
+      "output": "Talk to someone you trust, practice relaxation techniques, and seek professional help if needed."
+      },
+      {
+      "input": "How do I support children who have experienced a disaster?",
+      "output": "Provide reassurance, maintain routines, and encourage them to express their feelings."
+      },
+      {
+      "input": "How do I rebuild my life after a disaster?",
+      "output": "Focus on your basic needs, seek support from others, and take things one step at a time."
+      },
+      {
+      "input": "How do I prevent future disasters?",
+      "output": "Support policies that promote disaster preparedness and climate resilience."
+      },
+      {
+      "input": "Where can I get more information about disaster preparedness?",
+      "output": "Visit the FEMA website."
+      },
+      {
+      "input": "What is the role of local government in disaster response?",
+      "output": "Local government coordinates emergency services and provides assistance to residents."
+      },
+      {
+      "input": "What is the role of the Red Cross in disaster response?",
+      "output": "The Red Cross provides shelter, food, and other assistance to disaster victims."
+      },
+      {
+      "input": "How can I stay safe during a protest?",
+      "output": "Stay aware of your surroundings, avoid confrontation, and follow instructions from authorities."
+      },
+      {
+      "input": "What should I do if I am involved in a car accident?",
+      "output": "Check for injuries, call the police, and exchange information with the other driver."
+      },
+      {
+      "input": "How do I escape from a burning building?",
+      "output": "Stay low to the ground, cover your mouth, and use the stairs."
+      },
+      {
+      "input": "How do I protect myself from identity theft?",
+      "output": "Use strong passwords, shred sensitive documents, and monitor your credit report."
+      },
+      {
+      "input": "What are the signs of a scam?",
+      "output": "Requests for personal information, high-pressure tactics, and promises that seem too good to be true."
+      },
+      {
+      "input": "How do I report a crime?",
+      "output": "Call the police or file a report online."
+      },
+      {
+      "input": "How do I file a complaint against a business?",
+      "output": "Contact the Better Business Bureau or your local consumer protection agency."
+      },
+      {
+      "input": "How can I protect my mental health?",
+      "output": "Practice self-care, connect with others, and seek professional help if needed."
+      },
+      {
+      "input": "How can I improve my physical health?",
+      "output": "Eat a healthy diet, exercise regularly, and get enough sleep."
+      },
+      {
+      "input": "How can I reduce my stress levels?",
+      "output": "Practice relaxation techniques, get regular exercise, and set realistic goals."
+      },
+      {
+      "input": "How can I improve my relationships?",
+      "output": "Communicate openly, listen actively, and show empathy."
+      },
+      {
+      "input": "How can I be more productive at work?",
+      "output": "Set priorities, manage your time effectively, and minimize distractions."
+      },
+      {
+      "input": "How can I save money?",
+      "output": "Create a budget, track your spending, and cut unnecessary expenses."
+      },
+      {
+      "input": "How can I reduce my carbon footprint?",
+      "output": "Conserve energy, use public transportation, and reduce waste."
+      },
+      {
+      "input": "How can I be more environmentally friendly?",
+      "output": "Recycle, conserve water, and reduce your use of plastic."
+      },
+      {
+      "input": "How can I support local businesses?",
+      "output": "Shop at local stores and eat at local restaurants."
+      },
+      {
+      "input": "How can I get involved in my community?",
+      "output": "Volunteer your time and participate in local events."
+      },
+      {
+      "input": "What should I do if I witness a hate crime?",
+      "output": "Report the incident to the police and support the victim."
+      },
+      {
+      "input": "How can I promote equality and inclusion?",
+      "output": "Challenge stereotypes, speak out against discrimination, and support inclusive policies."
+      },
+      {
+      "input": "What are my rights as a tenant?",
+      "output": "You have the right to a safe and habitable living environment and to be free from discrimination."
+      },
+      {
+      "input": "What are my rights as an employee?",
+      "output": "You have the right to a safe workplace and to be free from discrimination and harassment."
+      },
+      {
+      "input": "What should I do if I am stopped by the police?",
+      "output": "Remain calm, be polite, and know your rights."
+      },
+      {
+      "input": "How do I register to vote?",
+      "output": "Visit your local election office or register online."
+      },
+      {
+      "input": "How can I make a difference in the world?",
+      "output": "Find a cause you care about and get involved."
+      },
+      {
+      "input": "Where can I find mental health support?",
+      "output": "Search online for local mental health services or contact a helpline."
+      },
+      {
+      "input": "I'm feeling overwhelmed, what should I do?",
+      "output": "Take a break, practice deep breathing, and talk to someone you trust."
+      },
+      {
+      "input": "How can I deal with anxiety?",
+      "output": "Practice relaxation techniques, exercise, and seek professional help if needed."
+      },
+      {
+      "input": "What are some healthy coping mechanisms?",
+      "output": "Exercise, meditation, journaling, and spending time in nature."
+      },
+      {
+      "input": "How can I help a friend who is struggling with their mental health?",
+      "output": "Listen without judgment, offer support, and encourage them to seek professional help."
+      } 
+  ]
+  

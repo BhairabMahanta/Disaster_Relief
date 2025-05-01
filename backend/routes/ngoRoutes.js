@@ -4,9 +4,14 @@ const User = require('../models/User');
 const passport = require('passport');
 const Request = require('../models/Request');
 const { isNGO } = require('../middlewares/isNGO');
+const { isLoggedIn } = require('../middlewares/isLoggedIn');
 const sendAcceptedEmail = require('../utils/ngoAccepted');
 const Feedback = require('../models/NgoFeedback');  // Import feedback model
 const nodemailer = require('nodemailer');
+const EmergencySOS = require("../models/EmergencySOS");
+const twilio = require('twilio');
+const client = twilio(process.env.TWILIO_SID, process.env.TWILIO_AUTH_TOKEN);
+const crypto = require('crypto');
 
 router.get('/',(req,res)=>{
     res.render("ngo");
@@ -23,9 +28,9 @@ router.get('/dashboard', isNGO,async (req, res) => {
     try {
       // Fetch all requests that are pending (you can add more filters as needed)
       const requests = await Request.find({ pending: true }).populate('user');
-  
+      const sosRequests = await EmergencySOS.find({ status: "pending" }).populate("user");
       // Render the dashboard with the requests
-      res.render('ngoDashboard', { requests });
+      res.render('ngoDashboard', { requests,sosRequests });
     } catch (error) {
       console.error('Error fetching requests:', error);
       res.redirect('/auth/login');
@@ -49,26 +54,91 @@ router.get('/register',(req,res)=>{
 });
 
 router.post('/register', async (req, res) => {
-    const { name, email, country, phone, areaOfOperation, password } = req.body;
-    try {
-      const newUser = new User({
-        name,
-        email,
-        country,
-        phone,
-        areaOfOperation,
-        role: 'ngo' // VERY IMPORTANT
-      });
-  
-      await User.register(newUser, password);
-  
-      // After successful registration
-      res.redirect('/ngo/login'); // Redirect to login page
-    } catch (error) {
-      console.error(error);
-      res.redirect('/ngo/register'); // Redirect back if error
-    }
+  try {
+    const { name, email, password, country, areaOfOperation } = req.body;
+
+    // Generate OTP
+    const otp = crypto.randomInt(100000, 999999).toString();
+    const otpExpires = Date.now() + 10 * 60 * 1000; // OTP expires in 10 minutes
+
+    // Save NGO data + OTP in session
+    req.session.tempNgoUser = {
+      name,
+      email,
+      password,
+      country,
+      areaOfOperation,
+      otp,
+      otpExpires
+    };
+
+    // Send OTP via email
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: 'Your OTP for NGO Account Verification',
+      text: `Hello ${name},\n\nYour OTP is: ${otp}\n\nIt expires in 10 minutes.`,
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    res.render('../../frontend/views/ngoVerifyOTP', { email });
+  } catch (err) {
+    console.error(err);
+    res.redirect("/auth/ngo/register");
+  }
 });
+
+router.post('/verify-otp', async (req, res) => {
+  const { otpCombined } = req.body;
+
+  if (!req.session.tempNgoUser) {
+    return res.send("Session expired. Please register again.");
+  }
+
+  const { name, email, password, country, areaOfOperation, phone, otp, otpExpires } = req.session.tempNgoUser;
+
+  // Validate OTP
+  if (otp !== otpCombined || otpExpires < Date.now()) {
+    return res.send('Invalid or expired OTP');
+  }
+
+  try {
+    const newNgoUser = new User({
+      name,
+      email,
+      country,
+      areaOfOperation,
+      role: 'ngo',  // Set role to 'ngo' for NGO users
+      isVerified: true
+    });
+
+    await User.register(newNgoUser, password);
+
+    // Clear session after successful verification
+    req.session.tempNgoUser = null;
+
+    // Log the NGO in
+    req.login(newNgoUser, function (err) {
+      if (err) return next(err);
+      res.redirect('/ngo/dashboard'); // Redirect to the desired route after successful login
+    });
+  } catch (err) {
+    console.error(err);
+    res.redirect("/auth/ngo/register");
+  }
+});
+
 
 router.post('/respond/:id', isNGO, async (req, res) => {
     try {
@@ -141,5 +211,61 @@ router.post('/feedback', async (req, res) => {
   }
 });
 
+router.post("/respond1/:id", isLoggedIn, async (req, res) => {
+  try {
+    const sos = await EmergencySOS.findById(req.params.id).populate("user");
+    
+if (!sos || !sos.user) {
+  console.error("Invalid SOS or user not populated:", sos);
+  return res.status(404).send("SOS or user data not found.");
+}
 
+    sos.status = "accepted";
+    await sos.save();
+
+    // Send email to user
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: sos.user.email,
+      subject: "NGO Help on the Way",
+      html: `
+      <div style="font-family: Arial, sans-serif; padding: 20px;">
+        <h2 style="color: #007bff;">Hello ${sos.user.name || "Friend"},</h2>
+        <p>We have received your emergency SOS request and an NGO responder has accepted it.</p>
+        <p><strong>Location:</strong> Latitude ${sos.location.lat}, Longitude ${sos.location.lng}</p>
+        <p>Hang tight! Help is on the way 🚑</p>
+        <hr style="margin: 20px 0;">
+        <p style="font-size: 14px; color: gray;">This is an automated message from Community Aid.</p>
+      </div>
+    `,
+    };
+
+    await transporter.sendMail(mailOptions);
+
+        // SMS
+        const userPhone = sos.user.phone;
+        if (userPhone) {
+          await client.messages.create({
+            body: `Hello ${sos.user.name || 'Friend'}, your SOS has been accepted. Help is on the way to your location (Lat: ${sos.location.lat}, Lng: ${sos.location.lng}). Stay safe! - Disaster Relief Team🚑`,
+            from: process.env.TWILIO_PHONE,
+            to: userPhone
+          });
+        }
+
+    res.redirect("/ngo/dashboard");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Failed to respond");
+  }
+});
 module.exports = router;

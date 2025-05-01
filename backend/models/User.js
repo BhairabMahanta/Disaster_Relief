@@ -20,6 +20,10 @@ const userSchema = new mongoose.Schema({
     default: Date.now
   },
   subscribedCountries: [{ type: String }],
+  windAlertSubscribed: { // ✅ New field
+    type: Boolean,
+    default: false
+  },
   // NGO specific fields
   phone: {
       type: String,
@@ -31,10 +35,16 @@ const userSchema = new mongoose.Schema({
       type: String, 
       enum: ['citizen', 'ngo', 'admin'], 
       default: 'citizen'
-  }
+  },
+  otp: String,
+  otpExpires: Date,
+  isVerified: {
+    type: Boolean,
+    default: false
+}
+
 });
 
-// Adds username, hash & salt fields and convenience methods
 userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
 
 module.exports = mongoose.model('User', userSchema);

@@ -1,18 +1,20 @@
 
+
 <div class="chartGraphs">
-    <div class="disasterChart">
-      <h2 class="text-4xl font-bold text-center mb-10 text-gray-800">Disaster Types Distribution</h2>
+  <div class="chart-container">
+    <h2 class="chart-title">Disaster Types Distribution</h2>
+    <div class="canvas-wrapper">
       <canvas id="disasterChart"></canvas>
     </div>
-  <br><br>
-  <!-- Create a canvas for the X-Y graph -->
-  <div class="disasterGraph">
-    <h2 class="text-4xl font-bold text-center mb-10 text-gray-800">Deaths vs Disaster Types</h2>
-    <canvas id="disasterGraph" width="400" height="200"></canvas>
   </div>
-  
+  <div class="chart-container">
+    <h2 class="chart-title">Deaths vs Disaster Types</h2>
+    <div class="canvas-wrapper">
+      <canvas id="disasterGraph"></canvas>
+    </div>
   </div>
-  
+</div>
+
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script>
           async function loadGraph() {
@@ -98,4 +100,56 @@
       .catch(error => {
         console.error('Error fetching graph data:', error);
       });
+  </script>
+  <script>
+    const ctx = document.getElementById('disasterGraph').getContext('2d');
+
+// Create gradient for bars
+const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+gradient.addColorStop(0, '#ff6a00');
+gradient.addColorStop(1, '#ffb347');
+
+const disasterChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: disasterTypes,
+    datasets: [{
+      label: 'Deaths',
+      data: deaths,
+      backgroundColor: gradient,
+      borderColor: '#ff6a00',
+      borderWidth: 2,
+      borderRadius: 16,        // Rounded corners
+      borderSkipped: false     // Round all corners
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { enabled: true }
+    },
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  },
+  plugins: [{
+    // Drop shadow plugin
+    beforeDraw: chart => {
+      const ctx = chart.ctx;
+      ctx.save();
+      ctx.shadowColor = 'rgba(0,0,0,0.12)';
+      ctx.shadowBlur = 12;
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 4;
+    },
+    afterDraw: chart => {
+      chart.ctx.restore();
+    }
+  }]
+});
+  
   </script>

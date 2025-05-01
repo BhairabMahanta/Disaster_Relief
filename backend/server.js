@@ -10,6 +10,7 @@ const droneRoutes = require('./routes/droneRoutes');
 const ngoRoutes = require('./routes/ngoRoutes');
 const resourceRoutes = require('./routes/resourceRoutes');
 const chatBotRoutes = require('./routes/chatBotRoutes');
+const weatherRoutes = require('./routes/weatherRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const citizenRoutes = require('./routes/citizenRoutes');
 const fetchAndStoreGdacsData = require('./utils/fetchGdacs');
@@ -26,6 +27,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const { getGraphData, getDeathsData } = require('./utils/fetchGraph'); 
 const { sendDroneDispatchEmail, sendDroneCompletionEmail } = require('./utils/sendDroneEmail');
 const methodOverride = require('method-override');
+const emergencyRoutes = require("./routes/emergency");
 
 dotenv.config();
 
@@ -43,6 +45,7 @@ app.set('views', path.join(__dirname, '../frontend/views'));
 // Serve static files
 app.use(express.static(path.join(__dirname, "../frontend/public")));
 app.use(express.static('public'));
+app.use("/uploads", express.static("uploads"));
 
 //Handling method-override
 app.use(methodOverride('_method'));
@@ -54,7 +57,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(session({
   secret: 'yourSecretKey',
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  cookie: { maxAge: 10 * 60 * 1000 }
 }));
 
 // Passport Configuration
@@ -79,6 +83,8 @@ app.use('/citizen', citizenRoutes);
 app.use('/admin', adminRoutes);
 app.use('/resources', resourceRoutes);
 app.use('/chatBot', chatBotRoutes);
+app.use('/weather', weatherRoutes);
+app.use("/emergency", emergencyRoutes);
 app.use('/', homeRoutes);
 
 // Database Set-up
