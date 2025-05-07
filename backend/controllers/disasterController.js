@@ -15,14 +15,33 @@ module.exports.getDisaster =async (req,res)=>{
     res.render('../../frontend/views/disasterAlerts',{alerts, user: req.user });
 };
 
+module.exports.getDisastersAPI = async (req, res) => {
+  try {
+    const today = new Date();
+    const sevenDaysAgo = new Date(today);
+    sevenDaysAgo.setDate(today.getDate() - 7);
+
+    const alerts = await Alert.find({
+      eventDate: { $gte: sevenDaysAgo }
+    }).sort({ eventDate: -1 });
+
+    res.status(200).json({ alerts }); // ✅ send JSON, not render()
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to fetch alerts' });
+  }
+};
+
+
 module.exports.subscribe = async (req, res) => {
   const { country } = req.body;
   const userEmail = req.user.email;
-
+  console.log("USEREMAIL:", userEmail)
+  console.log("subscribing")
   try {
       
     const alerts = await Alert.find({ location: { $regex: new RegExp(country, 'i') } });
-
+    console.log("alert", alerts)
     const transporter = nodemailer.createTransport({
       host : "smtp.gmail.com",
       port : 465,
@@ -49,6 +68,7 @@ module.exports.subscribe = async (req, res) => {
         ${alertsHtml}
       `
     };
+    console.log("subscribed")
 
     await transporter.sendMail(mailOptions);
 
